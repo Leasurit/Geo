@@ -1,10 +1,7 @@
 import pandas as pd
 import streamlit as st
 import matplotlib as plt
-import numpy as np
-
-#wb = openpyxl.load_workbook(‘workbook.xlsx’)
-#sheet = wb[‘data’]
+#import numpy as np
 
 st.title("Hello world!") 
 st.write('Standards')
@@ -26,3 +23,6 @@ st.write(df)
          
 #df = pd.read_csv("./data/titanic.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
 # df = pd.read_excel(...)  # will work for Excel files
+
+#wb = openpyxl.load_workbook(‘workbook.xlsx’)
+#sheet = wb[‘data’]
