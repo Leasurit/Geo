@@ -7,7 +7,7 @@ import numpy as np
 #sheet = wb[‘data’]
 
 st.title("Hello world!") 
-st.write(Standards')
+st.write('Standards')
 df = pd.read_excel('OxAndEl2.xlsx')
 st.write(df)
 
