@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import openpyxl
+
 
 #df = pd.read_excel("OxAndEl2.xlsx", "Tabelle1")
 
