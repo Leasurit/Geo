@@ -8,6 +8,8 @@ import streamlit as st
 #wb = openpyxl.load_workbook(‘workbook.xlsx’)
 #sheet = wb[‘data’]
 
-uploadedfile = st.file_uploader("OxAndEl2")
-df = pd.read_excel(uploadedfile)
+
+st.write("Add your own data:")
+uploadedfile = st.file_uploader("Choose your file")
+df2 = pd.read_excel(uploadedfile)
 
