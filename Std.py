@@ -1,15 +1,40 @@
 import pandas as pd
 import streamlit as st
+import matplotlib as plt
+import numpy as np
 
 #wb = openpyxl.load_workbook(‘workbook.xlsx’)
 #sheet = wb[‘data’]
 
 st.title("Hello world!") 
-df = pd.read_excel("OxAndEl2.xlsx")
+df = pd.read_excel('OxAndEl2.xlsx')
 st.write(df)
-st.write("Add your own data:")
-uploadedfile = st.file_uploader("Choose your file")
-df2 = pd.read_excel(uploadedfile)
+
+##Drag and drop Menü um Daten hinzuzufügen:
+  #st.write('Add your own data:')
+  #uploadedfile = st.file_uploader("Choose your file")
+  #df2 = pd.read_excel(uploadedfile)
 
 #df = pd.read_csv("./data/titanic.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
 # df = pd.read_excel(...)  # will work for Excel files
+
+## Standard auswählen
+Standards = std_names (diese Liste, die wir definiert haben)
+option = st. selectbox ('Chosse a standard:', (Standard))
+st.write('Selected:', optionx)
+optiony = st. selectbox ('Element y-axis:', (elements))
+st.write('Selected:', optiony)
+
+option = st. selectbox ('My favourite fruit:', ('Strawberry', 'Raspberry', 'Blueberry'))
+st.write('Selected:', option)
+
+x = np.linspace(0, 50, 50)
+fig1, ax = plt.subplots()
+ax.plot(x, x**2)
+
+st.pyplot(fig1)
+
+st.write('Bastar Craton')
+df = pd.read_csv('Bastar Craton.csv')
+
+elements = ['Mg', 'Si', 'Fe']
