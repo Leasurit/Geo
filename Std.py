@@ -5,7 +5,7 @@ import matplotlib as plt
 
 st.title("Hello world!") 
 st.write('Standards')
-df_data = pd.read_csv('OxAndEl2.csv')
+df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 #error_bad_lines=False
 st.write(df_data)
 std_names = df_data['Standard'].drop_duplicates() 
