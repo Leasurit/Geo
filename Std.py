@@ -5,7 +5,7 @@ import matplotlib as plt
 
 st.title("Hello world!") 
 st.write('Standards')
-df = pd.read_csv('OxAndEl2.csv', error_bad_lines=False, index_col='Constituent')
+df = pd.read_csv('OxAndEl2.csv', error_bad_lines=False)
 st.write(df)
 
 ##Drag and drop Menü um Daten hinzuzufügen:
