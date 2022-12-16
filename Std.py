@@ -17,8 +17,8 @@ std_names = df_data['Standard'].drop_duplicates()
 
 ## Standard auswählen
   #Standards = std_names (diese Liste, die wir definiert haben)
-  #option = st. selectbox ('Chosse a standard:', (Standard))
-  #st.write('Selected:', optionx)
+  option = st. selectbox ('Chosse a standard:', (std_names))
+  st.write('Selected:', optionx)
 
 
 #df = pd.read_csv('Bastar Craton.csv')
