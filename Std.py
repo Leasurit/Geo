@@ -20,11 +20,6 @@ std_names = df_data['Standard'].drop_duplicates()
 option = st. selectbox ('Choose a standard:', (std_names))
 st.write('Selected:', option)
 
-
-#df = pd.read_csv('Bastar Craton.csv')
-         
-#df = pd.read_csv("./data/titanic.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
-# df = pd.read_excel(...)  # will work for Excel files
-
-#wb = openpyxl.load_workbook(‘workbook.xlsx’)
-#sheet = wb[‘data’]
+#def SelectData (name):
+    #fil  = df_data['Standard'] == name
+    #return df_data.loc[fil].T
