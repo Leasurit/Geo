@@ -5,8 +5,9 @@ import matplotlib as plt
 
 st.title("Hello world!") 
 st.write('Standards')
-df = pd.read_csv('OxAndEl2.csv', error_bad_lines=False)
-st.write(df)
+df_data = pd.read_csv('OxAndEl2.csv', error_bad_lines=False)
+st.write(df_data)
+std_names = df_data['Standard'].drop_duplicates() 
 
 ##Drag and drop Menü um Daten hinzuzufügen:
   #st.write('Add your own data:')
