@@ -10,8 +10,15 @@ df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 st.write(df_data)
 std_names = df_data['Standard'].drop_duplicates() 
 
-st.sidebar.header("Select here:")
+st.sidebar.header("Select data:")
+# Stadard auswählen
 standard = st.sidebar.multiselect("Select your standard:", options = df_data["Standard"].unique(), default = df_data["Standard"].unique())
+# Element auswählen
+#element = st.sidebar.multiselect("Select your element:", options = df_data[""].unique(), default = df_data[""].unique())
+#Gestein auswählen
+#rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
+
+df_data_selection = df.query("standard == @Standard")
 
 ##Drag and drop Menü um Daten hinzuzufügen:
   #st.write('Add your own data:')
