@@ -10,6 +10,9 @@ df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 st.write(df_data)
 std_names = df_data['Standard'].drop_duplicates() 
 
+st.sidebar.header("Select here:")
+standard = st.sidebar.multiselect("Select your standard:", options = df_data["Standard"].unique(), default = df_data["Standard"].unique())
+
 ##Drag and drop Menü um Daten hinzuzufügen:
   #st.write('Add your own data:')
   #uploadedfile = st.file_uploader("Choose your file")
