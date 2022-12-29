@@ -18,7 +18,7 @@ standard = st.sidebar.multiselect("Select your standard:", options = df_data["St
 #Gestein auswählen
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
-df_data_selection = df.query("standard == @Standard")
+df_data_selection = df.query("Standard == @standard")
 
 ##Drag and drop Menü um Daten hinzuzufügen:
   #st.write('Add your own data:')
