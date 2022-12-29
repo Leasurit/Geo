@@ -3,7 +3,7 @@ import streamlit as st
 import matplotlib as plt
 #import numpy as np
 
-st.title("Hello world! I love chocolate") 
+st.title("Hello world!") 
 st.write('Standards')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 #error_bad_lines=False
