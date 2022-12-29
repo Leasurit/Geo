@@ -14,7 +14,7 @@ st.sidebar.header("Select data:")
 # Stadard auswählen
 standard = st.sidebar.multiselect("Select your standard:", options = df_data["Standard"].unique(), default = df_data["Standard"].unique())
 # Element auswählen
-#element = st.sidebar.multiselect("Select your element:", options = df_data[""].unique(), default = df_data[""].unique())
+element = st.sidebar.multiselect("Select your element:", options = df_data.iloc[3:8, 1].unique(), default = df_data[""].unique())
 #Gestein auswählen
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
@@ -33,3 +33,6 @@ st.write('Selected:', option)
 #def SelectData (name):
     #fil  = df_data['Standard'] == name
     #return df_data.loc[fil].T
+    
+#df1.iloc[4:8, [3,5]]
+# zeigt Spalten 3 und 5 der Zeilen 4 bis 7
