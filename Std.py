@@ -15,7 +15,7 @@ st.sidebar.header("Select data:")
 standard = st.sidebar.multiselect("Select your standard:", options = df_data["Standard"].unique(), default = df_data["Standard"].unique())
 # Oxid auswählen
 #oxide = st.sidebar.multiselect("Select your oxide:", options = df_data.iloc[1, [3:26]] ) # , default = df_data.iloc[3:26, [1]])
-st.write(df_data.iloc[[0], [3:26]])
+st.write(df_data.iloc[[0], [26]])
 #Gestein auswählen
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
