@@ -16,7 +16,7 @@ standard = st.sidebar.multiselect("Select your standard:", options = df_data["St
 # Oxid auswählen
 #oxide = st.sidebar.multiselect("Select your oxide:", options = df_data.iloc[[0], 3:25]) # , default = df_data.iloc[3:26, [1]])
 oxide = st.sidebar.multiselect("Select your oxide", options=list(df_data.columns[3:25]), default=list(df_data.columns[3:25]))
-element = st.sidebar.multiselect("Select your element", options=list(df_data.columns[26:100]), default=list(df_data.columns[26:100]))
+element = st.sidebar.multiselect("Select your element", options=list(df_data.columns[26:104]), default=list(df_data.columns[26:104]))
 #st.write(df_data.iloc[:, 3:25])
 
 
