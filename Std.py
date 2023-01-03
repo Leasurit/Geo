@@ -12,7 +12,7 @@ std_names = df_data['Standard'].drop_duplicates()
 
 st.sidebar.header("Select data:")
 # Standard auswählen
-standard = st.sidebar.multiselect("Select your standard:", options = df_data["Standard"].unique(), default = df_data["Standard"].unique())
+standard = st.sidebar.multiselect("Select your standard:", options = df_data["Standard"].unique())#, default = df_data["Standard"].unique())
 # Oxid auswählen
 #oxide = st.sidebar.multiselect("Select your oxide:", options = df_data.iloc[[0], 3:25]) # , default = df_data.iloc[3:26, [1]])
 oxide = st.sidebar.multiselect("Select your oxide", options=list(df_data.columns[3:25]), default=list(df_data.columns[3:25]))
