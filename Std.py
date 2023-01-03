@@ -36,8 +36,8 @@ st.write(df_data[:, element]
 
 ## Standard auswählen
   #Standards = std_names (diese Liste, die wir definiert haben)
-option = st. selectbox ('Choose a standard:', (std_names))
-st.write('Selected:', option)
+#option = st. selectbox ('Choose a standard:', (std_names))
+#st.write('Selected:', option)
 
 #def SelectData (name):
     #fil  = df_data['Standard'] == name
