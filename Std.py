@@ -14,7 +14,8 @@ st.sidebar.header("Select data:")
 # Standard auswählen
 standard = st.sidebar.multiselect("Select your standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
 # Oxid auswählen
-oxide = st.sidebar.multiselect("Select your oxide", options=list(df_data.columns[3:25])) #, default=list(df_data.columns[3:25]))
+oxides = df_data.iloc[:, 3:25]
+oxide = st.sidebar.multiselect("Select your oxide", options=list(oxides)) #, default=list(df_data.columns[3:25]))
 # Element auswählen
 element = st.sidebar.multiselect("Select your element", options=list(df_data.columns[26:104])) #, default=list(df_data.columns[26:104]))
 #Gestein auswählen
@@ -22,6 +23,8 @@ element = st.sidebar.multiselect("Select your element", options=list(df_data.col
 
 df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
+
+
 
 st.write(df_data.iloc[:, 3:25])
 #st.write(df[oxide])
