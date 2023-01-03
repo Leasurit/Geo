@@ -23,7 +23,7 @@ element = st.sidebar.multiselect("Select your element", options=list(df_data.col
 df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
 
-#st.write(df_data.iloc[:, 3:25])
+st.write(df_data.iloc[:, 3:25])
 #st.write(df[oxide])
 
 ##Drag and drop Menü um Daten hinzuzufügen:
