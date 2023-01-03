@@ -18,11 +18,13 @@ oxides = df_data.iloc[:, 3:25]
 oxide = st.sidebar.multiselect("Select your oxide", options=list(oxides)) #, default=list(df_data.columns[3:25]))
 # Element auswählen
 element = st.sidebar.multiselect("Select your element", options=list(df_data.columns[26:104])) #, default=list(df_data.columns[26:104]))
+
 #Gestein auswählen
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
-df_data_selectionstandard = df_data.query("Standard == @standard")
+df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
+st.write(df_data[:, element]
 
 #st.write(df_data.iloc[:, 3:25])
 #st.write(df[oxide])
