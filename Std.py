@@ -26,7 +26,7 @@ element = st.sidebar.multiselect("Select your element", options=list(elements)) 
 df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
 #st.dataframe(df_data_selection = df_data.query("elements == @element"))
-st.write(df_data.columns[element])
+st.write(df_data.columns["element"])
 #st.wirte(df_data[]
 
 #st.write(df_data.iloc[:, 3:25])
