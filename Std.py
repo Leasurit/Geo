@@ -24,7 +24,7 @@ element = st.sidebar.multiselect("Select your element", options=list(df_data.col
 
 df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
-st.write(df_data[:, element]
+st.write(df_data[:, element])
 
 #st.write(df_data.iloc[:, 3:25])
 #st.write(df[oxide])
@@ -36,8 +36,8 @@ st.write(df_data[:, element]
 
 ## Standard auswählen
   #Standards = std_names (diese Liste, die wir definiert haben)
-#option = st. selectbox ('Choose a standard:', (std_names))
-#st.write('Selected:', option)
+option = st. selectbox ('Choose a standard:', (std_names))
+st.write('Selected:', option)
 
 #def SelectData (name):
     #fil  = df_data['Standard'] == name
