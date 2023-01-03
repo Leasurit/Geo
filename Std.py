@@ -21,7 +21,7 @@ element = st.sidebar.multiselect("Select your element", options=list(df_data.col
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
 df_data_selection = df_data.query("Standard == @standard")
-st.dataframe(df_selection)
+st.dataframe(df_data_selection)
 
 #st.write(df_data.iloc[:, 3:25])
 #st.write(df[oxide])
