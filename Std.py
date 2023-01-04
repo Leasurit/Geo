@@ -25,9 +25,8 @@ element = st.sidebar.multiselect("Select your element", options=list(elements))#
 st.write("Selected data:")
 df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
-if len(element) > 0 :
-    st.write(df_data.loc[:, ["Standard", element[0]]])
-    
+
+st.write("Show concentration for selected elements for all standards:")  
 fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 st.write(df_data_conc_only[["Standard"] + element])
