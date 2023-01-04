@@ -31,7 +31,10 @@ fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 st.write(df_data_conc_only[["Standard"] + element])
 
-
+st.write("Show concentration for selected oxides for all standards:")  
+fil2 = df_data['Constituent'] == 'Concentration'
+df_data_conc_only2 = df_data[fil2]
+st.write(df_data_conc_only2[["Standard"] + oxide])
 
 #st.write(df_data.iloc[:, 3:25])
 #st.write(df[oxide])
