@@ -13,12 +13,12 @@ std_names = df_data['Standard'].drop_duplicates()
 st.sidebar.header("Select data:")
 # Standard auswählen
 standard = st.sidebar.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
-# Oxid auswählen
-oxides = df_data.iloc[:, 3:25]
-oxide = st.sidebar.multiselect("Select an oxide", options=list(oxides)) #, default=list(df_data.columns[3:25]))
 # Element auswählen
 elements = df_data.columns[26:104]
 element = st.sidebar.multiselect("Select an element", options=list(elements))#, default=list(df_data.columns[26:27]))
+# Oxid auswählen
+oxides = df_data.iloc[:, 3:25]
+oxide = st.sidebar.multiselect("Select an oxide", options=list(oxides)) #, default=list(df_data.columns[3:25]))
 #Gestein auswählen
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
@@ -46,8 +46,8 @@ st.write(df_data_conc_only2[["Standard"] + oxide])
 
 ## Standard auswählen
   #Standards = std_names (diese Liste, die wir definiert haben)
-option = st. selectbox ('Choose a standard:', (std_names))
-st.write('Selected:', option)
+#option = st. selectbox ('Choose a standard:', (std_names))
+#st.write('Selected:', option)
 
 #def SelectData (name):
     #fil  = df_data['Standard'] == name
