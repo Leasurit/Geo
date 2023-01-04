@@ -22,16 +22,16 @@ element = st.sidebar.multiselect("Select an element", options=list(elements))#, 
 #Gestein auswählen
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
-st.write("Selected data:")
+st.write("Data for selected standard:")
 df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
 
-st.write("Show concentration for selected elements for all standards:")  
+st.write("Please select an element / elements to see their concentrtions for all standards.")  
 fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 st.write(df_data_conc_only[["Standard"] + element])
 
-st.write("Show concentration for selected oxides for all standards:")  
+st.write("Please select an oxide / oxides to see their concentrtions for all standards.")  
 fil2 = df_data['Constituent'] == 'Concentration'
 df_data_conc_only2 = df_data[fil2]
 st.write(df_data_conc_only2[["Standard"] + oxide])
