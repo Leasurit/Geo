@@ -45,6 +45,3 @@ st.write('Selected:', option)
 #def SelectData (name):
     #fil  = df_data['Standard'] == name
     #return df_data.loc[fil].T
-
-#df1.iloc[4:8, [3,5]]
-# zeigt Spalten 3 und 5 der Zeilen 4 bis 7
