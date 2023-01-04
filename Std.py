@@ -4,7 +4,7 @@ import matplotlib as plt
 #import numpy as np
 
 st.title("Hello world!")
-st.write('Standards')
+st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 #error_bad_lines=False
 st.write(df_data)
@@ -12,13 +12,13 @@ std_names = df_data['Standard'].drop_duplicates()
 
 st.sidebar.header("Select data:")
 # Standard auswählen
-standard = st.sidebar.multiselect("Select your standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
+standard = st.sidebar.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
 # Oxid auswählen
 oxides = df_data.iloc[:, 3:25]
-oxide = st.sidebar.multiselect("Select your oxide", options=list(oxides)) #, default=list(df_data.columns[3:25]))
+oxide = st.sidebar.multiselect("Select an oxide", options=list(oxides)) #, default=list(df_data.columns[3:25]))
 # Element auswählen
 elements = df_data.columns[26:104]
-element = st.sidebar.multiselect("Select your element", options=list(elements))#, default=list(df_data.columns[26:27]))
+element = st.sidebar.multiselect("Select an element", options=list(elements))#, default=list(df_data.columns[26:27]))
 #Gestein auswählen
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
