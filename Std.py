@@ -27,6 +27,11 @@ df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
 if len(element) > 0 :
     st.write(df_data.loc[:, ["Standard", element[0]]])
+    
+fil = df_data['Constituent'] == 'Concentration'
+df_data_conc_only = df_data[fil]
+st.write(df_data_conc_only[["Standard"] + element])
+
 
 
 #st.write(df_data.iloc[:, 3:25])
