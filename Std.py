@@ -6,6 +6,7 @@ import matplotlib as plt
 st.title("Hello world!")
 st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
+LookUp = pd.read_csv('LookUpTable.csv', sep=';')
 #error_bad_lines=False
 st.write(df_data)
 std_names = df_data['Standard'].drop_duplicates()
@@ -26,12 +27,12 @@ st.write("Data for selected standard:")
 df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
 
-st.write("Please select an element / elements to see their concentrtions for all standards.")  
+st.write("Please select an element / elements to see their concentrations for all standards.")  
 fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 st.write(df_data_conc_only[["Standard"] + element])
 
-st.write("Please select an oxide / oxides to see their concentrtions for all standards.")  
+st.write("Please select an oxide / oxides to see their concentrations for all standards.")  
 fil2 = df_data['Constituent'] == 'Concentration'
 df_data_conc_only2 = df_data[fil2]
 st.write(df_data_conc_only2[["Standard"] + oxide])
