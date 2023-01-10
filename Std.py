@@ -12,6 +12,8 @@ st.write(df_data)
 st.write(LookUp)
 std_names = df_data['Standard'].drop_duplicates()
 
+st.write(LookUp[Element])
+
 st.sidebar.header("Select data:")
 # Standard auswählen
 standard = st.sidebar.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
