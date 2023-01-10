@@ -12,6 +12,8 @@ st.write(df_data)
 st.write(LookUp)
 std_names = df_data['Standard'].drop_duplicates()
 
+st.write(LookUpTable.loc['Al', 'Further information'])
+
 #st.write(LookUp['Element'])
 #Element(e) auswählen und Infos aus df_data anzeigen. In LookUp schauen: Wenn nicht N/A in LookUp für diese Element(e) die eingetragenen Werte als Spalten aus df_data anzeigen
 
@@ -23,7 +25,7 @@ standard = st.sidebar.multiselect("Select a standard:", options = df_data["Stand
 elements = df_data.columns[26:104]
 element = st.sidebar.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
 
-st.write(LookUpTable.loc['Al', 'Further information'])
+
 
 st.write("Please select an element / elements to see their concentrations for all standards.")  
 fil = df_data['Constituent'] == 'Concentration'
@@ -32,7 +34,7 @@ st.write(df_data_conc_only[["Standard"] + element + furtherinfo])
 
 #if options in LookUp further ist ungleich N/A
 #  st.write(LookUp['Eintrag in LookUp']
-furtherinfo = 
+#furtherinfo = 
 
 
 
