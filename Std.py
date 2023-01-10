@@ -31,11 +31,12 @@ element = st.sidebar.multiselect("Select an element", options=list(elements)) #,
 st.write("Please select an element / elements to see their concentrations for all standards.")  
 fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
+furtherinfo = LookUp.loc[['Al'], ['Further information']]
 st.write(df_data_conc_only[["Standard"] + element + furtherinfo])
 
 #if options in LookUp further ist ungleich N/A
 #  st.write(LookUp['Eintrag in LookUp']
-#furtherinfo = 
+
 
 
 
