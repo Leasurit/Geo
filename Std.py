@@ -12,6 +12,7 @@ st.write(df_data)
 st.write(LookUp)
 std_names = df_data['Standard'].drop_duplicates()
 
+LookUpTable.set_index("Element", inplace=True
 st.write(LookUpTable.loc[['Al'], ['Further information']])
 
 #st.write(LookUp['Element'])
