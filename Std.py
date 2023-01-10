@@ -12,7 +12,7 @@ st.write(df_data)
 st.write(LookUp)
 std_names = df_data['Standard'].drop_duplicates()
 
-st.write(LookUpTable.loc['Al'], ['Further information'])
+st.write(LookUpTable.loc[['Al'], ['Further information']])
 
 #st.write(LookUp['Element'])
 #Element(e) auswählen und Infos aus df_data anzeigen. In LookUp schauen: Wenn nicht N/A in LookUp für diese Element(e) die eingetragenen Werte als Spalten aus df_data anzeigen
