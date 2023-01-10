@@ -9,6 +9,7 @@ df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 LookUp = pd.read_csv('LookUpTable.csv', sep=';')
 #error_bad_lines=False
 st.write(df_data)
+st.write(LookUp)
 std_names = df_data['Standard'].drop_duplicates()
 
 st.sidebar.header("Select data:")
