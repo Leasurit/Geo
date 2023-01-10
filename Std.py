@@ -12,17 +12,31 @@ st.write(df_data)
 st.write(LookUp)
 std_names = df_data['Standard'].drop_duplicates()
 
-st.write(LookUp[('Element, Further information')])
+#st.write(LookUp['Element'])
+#Element(e) auswählen und Infos aus df_data anzeigen. In LookUp schauen: Wenn nicht N/A in LookUp für diese Element(e) die eingetragenen Werte als Spalten aus df_data anzeigen
 
 st.sidebar.header("Select data:")
 # Standard auswählen
 standard = st.sidebar.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
+
 # Element auswählen
 elements = df_data.columns[26:104]
-element = st.sidebar.multiselect("Select an element", options=list(elements))#, default=list(df_data.columns[26:27]))
-# Oxid auswählen
-oxides = df_data.iloc[:, 3:25]
-oxide = st.sidebar.multiselect("Select an oxide", options=list(oxides)) #, default=list(df_data.columns[3:25]))
+element = st.sidebar.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
+
+
+st.write("Please select an element / elements to see their concentrations for all standards.")  
+fil = df_data['Constituent'] == 'Concentration'
+df_data_conc_only = df_data[fil]
+st.write(df_data_conc_only[["Standard"] + element])
+
+#if options in LookUp further ist ungleich N/A
+#  st.write(LookUp['Eintrag in LookUp']
+
+
+
+## Oxid auswählen
+#oxides = df_data.iloc[:, 3:25]
+#oxide = st.sidebar.multiselect("Select an oxide", options=list(oxides)) #, default=list(df_data.columns[3:25]))
 #Gestein auswählen
 #rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
 
@@ -30,10 +44,7 @@ st.write("Data for selected standard:")
 df_data_selection = df_data.query("Standard == @standard")
 st.dataframe(df_data_selection)
 
-st.write("Please select an element / elements to see their concentrations for all standards.")  
-fil = df_data['Constituent'] == 'Concentration'
-df_data_conc_only = df_data[fil]
-st.write(df_data_conc_only[["Standard"] + element])
+
 
 st.write("Please select an oxide / oxides to see their concentrations for all standards.")  
 fil2 = df_data['Constituent'] == 'Concentration'
