@@ -12,7 +12,7 @@ st.write(df_data)
 st.write(LookUp)
 std_names = df_data['Standard'].drop_duplicates()
 
-st.write(LookUp['Element', 'Further information'])
+st.write(LookUp[('Element', 'Further information')])
 
 st.sidebar.header("Select data:")
 # Standard auswählen
