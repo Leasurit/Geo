@@ -44,7 +44,7 @@ for i in furtherinfo['Further information'].tolist():
   fullEllist = fullEllist + res
 ## wenn mehr als 2 Elemente ausgewählt: 'float' object has no attribute 'split'
 ## wenn nur 2 Elemente ausgewählt: ValueError: ('Lengths must match to compare', (13,), (1,))
- 
+st.write(fullEllist)
 
 #fullEllist = []
 #for i in furtherinfo['Further information'].tolist():
@@ -68,7 +68,7 @@ st.write(df_data_conc_only[fil2] + fullEllist)
 
 
   
-#st.write(fullEllist)
+
 
 #furtherinfo = LookUp.loc[[element], ['Further information']]
 #st.write(df_data_conc_only[["Standard"] + element + furtherinfo])
