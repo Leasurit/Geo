@@ -45,7 +45,7 @@ for i in furtherinfo['Further information'].tolist():
     res = i.split('_')
   else: 
     res.append(i)
- fullEllist = fullEllist + res
+fullEllist = fullEllist + res
   
 fil2 = df_data_conc_only['Standard'] == standard
 st.write(df_data_conc_only[fil2] + fullEllist)
