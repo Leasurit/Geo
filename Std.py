@@ -38,10 +38,11 @@ df_data_conc_only = df_data[fil]
 
 
 furtherinfo = LookUp.loc[element]
+st.write(furtherinfo) 
 
 fullEllist = []
 for i in furtherinfo['Further information'].tolist():
-  LookUp['Further information'].apply(str)
+  #LookUp['Further information'].apply(str)
   res = i.split('_')
   fullEllist = fullEllist + res
   
