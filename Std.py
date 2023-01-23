@@ -51,7 +51,7 @@ for i in furtherinfo['Further information']:
   if i == str:
     res = i.split('_')
   else:
-    res.append(i)
+    fullEllist.append(i)
 fullEllist = fullEllist + res
 
 #fullEllist = []
