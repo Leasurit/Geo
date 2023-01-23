@@ -40,9 +40,12 @@ st.write(furtherinfo)
 
 fullEllist = []
 for i in furtherinfo['Further information'].tolist():
-  i.apply(str)
-  res = i.split('_')
-  fullEllist = fullEllist + res
+  #i.apply(str)
+  if i == str:
+    res = i.split('_')
+  else 
+    res.append(i)
+ fullEllist = fullEllist + res
   
 fil2 = df_data_conc_only['Standard'] == standard
 st.write(df_data_conc_only[fil2] + fullEllist)
