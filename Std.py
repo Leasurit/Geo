@@ -52,7 +52,7 @@ for i in furtherinfo['Further information']:
     res = i.split('_')
   else:
     fullEllist.append(i)
-fullEllist = fullEllist + res
+  fullEllist = fullEllist + res
 
 #fullEllist = []
 #for i in furtherinfo['Further information'].tolist():
