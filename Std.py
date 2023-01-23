@@ -41,7 +41,7 @@ furtherinfo = LookUp.loc[element]
 
 fullEllist = []
 for i in furtherinfo['Further information'].tolist():
-  LookUp['Element'].apply(str)
+  LookUp['Further information'].apply(str)
   res = i.split('_')
   fullEllist = fullEllist + res
   
