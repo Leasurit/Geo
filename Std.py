@@ -38,14 +38,25 @@ df_data_conc_only = df_data[fil]
 furtherinfo = LookUp.loc[element]
 st.write(furtherinfo) 
 
+#fullEllist = []
+#for i in furtherinfo['Further information'].tolist():
+  #i.apply(str)
+  #if i == str:
+    #res = i.split('_')
+ # else: 
+    #fullEllist.append(i)
+#fullEllist = fullEllist + res
+## res is not defined
+
 fullEllist = []
 for i in furtherinfo['Further information'].tolist():
-  #i.apply(str)
-  if i == str:
-    res = i.split('_')
-  else: 
-    fullEllist.append(i)
-fullEllist = fullEllist + res
+  i.apply(str)
+  res = i.split('_')
+  fullEllist = fullEllist + res
+## cannot apply
+
+
+
   
 fil2 = df_data_conc_only['Standard'] == standard
 st.write(df_data_conc_only[fil2] + fullEllist)
