@@ -47,8 +47,8 @@ st.write(furtherinfo)
 #st.write(fullEllist) # wenn Element ausgewählt wird, das keinen Eintrag in Further information hat, wird Liste nicht mehr angezeigt.
 
 fullEllist = []
-for i in furtherinfo['Further information']:
   if i == str:
+    for i in furtherinfo['Further information']:
     res = i.split('_')
   else:
     fullEllist.append(i)
