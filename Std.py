@@ -9,10 +9,11 @@ df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 LookUp = pd.read_csv('LookUpTable.csv', sep=';')
 #error_bad_lines=False
 st.write(df_data)
-st.write(LookUp)
+
 std_names = df_data['Standard'].drop_duplicates()
 
 LookUp.set_index("Element", inplace=True)
+st.write(LookUp)
 #st.write(LookUp.loc[['Al'], ['Further information']])
 
 st.sidebar.header("Select data:")
@@ -34,8 +35,7 @@ st.write("Please select an element / elements to see their concentrations for al
 fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 
-#fil2 = df_data_conc_only['Standard'] == standard
-#st.write(df_data_conc_only[fil2])
+
 
 furtherinfo = LookUp.loc[element]
 
@@ -44,7 +44,10 @@ for i in furtherinfo['Further information'].tolist():
   res = i.split('_')
   fullEllist = fullEllist + res
   
-st.write(fullEllist)
+fil2 = df_data_conc_only['Standard'] == standard
+st.write(df_data_conc_only[fil2] + fullEllist)
+  
+#st.write(fullEllist)
 
 #furtherinfo = LookUp.loc[[element], ['Further information']]
 #st.write(df_data_conc_only[["Standard"] + element + furtherinfo])
