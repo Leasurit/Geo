@@ -43,7 +43,7 @@ for i in furtherinfo['Further information'].tolist():
   #i.apply(str)
   if i == str:
     res = i.split('_')
-  else 
+  else: 
     res.append(i)
  fullEllist = fullEllist + res
   
