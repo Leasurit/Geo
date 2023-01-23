@@ -40,7 +40,6 @@ st.write(furtherinfo)
 
 fullEllist = []
 for i in furtherinfo['Further information'].tolist():
-  i.apply(str)
   res = i.split('_')
   fullEllist = fullEllist + res
 
