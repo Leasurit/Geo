@@ -37,14 +37,15 @@ df_data_conc_only = df_data[fil]
 fil2 = df_data_conc_only['Standard'] == std_names
 st.write(df_data_conc_only[fil2])
 
-furtherinfo = LookUp.loc[element]
+#furtherinfo = LookUp.loc[element]
 
-fullEllist = []
-for i in furtherinfo['Further information'].tolist():
-  res = i.split(_)
-  fullEllist = fullEllist + res
+#fullEllist = []
+#for i in furtherinfo['Further information'].tolist():
+  #res = i.split(_)
+  #fullEllist = fullEllist + res
   
-st.write(fullEllist)
+#st.write(fullEllist)
+
 #furtherinfo = LookUp.loc[[element], ['Further information']]
 #st.write(df_data_conc_only[["Standard"] + element + furtherinfo])
 
