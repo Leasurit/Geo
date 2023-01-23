@@ -38,13 +38,18 @@ df_data_conc_only = df_data[fil]
 furtherinfo = LookUp.loc[element]
 st.write(furtherinfo) 
 
-fullEllist = []
-for i in furtherinfo['Further information'].tolist():
-  res = i.split('_')
-  fullEllist = fullEllist + res
+#fullEllist = []
+#for i in furtherinfo['Further information'].tolist():
+  #res = i.split('_')
+  #fullEllist = fullEllist + res
 ## wenn mehr als 2 Elemente ausgewählt: 'float' object has no attribute 'split'
 ## wenn nur 2 Elemente ausgewählt: ValueError: ('Lengths must match to compare', (13,), (1,))
-st.write(fullEllist) # wenn Element ausgewählt wird, das keinen Eintrag in Further information hat, wird Liste nicht mehr angezeigt.
+#st.write(fullEllist) # wenn Element ausgewählt wird, das keinen Eintrag in Further information hat, wird Liste nicht mehr angezeigt.
+
+res = []
+for i in furtherinfo['Further information']:
+  res = i.split('_')
+  st.write(res)
 
 #fullEllist = []
 #for i in furtherinfo['Further information'].tolist():
