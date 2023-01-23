@@ -41,7 +41,7 @@ fullEllist = []
 for i in furtherinfo['Further information'].tolist():
   res = i.split(_)
   fullEllist = fullEllist + res
-#furtherinfo = LookUp.loc[[element], ['Further information']]
+furtherinfo = LookUp.loc[[element], ['Further information']]
 st.write(df_data_conc_only[["Standard"] + element + furtherinfo])
 
 #if options in LookUp further ist ungleich N/A
