@@ -35,14 +35,12 @@ st.write("Please select an element / elements to see their concentrations for al
 fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 
-
-
 furtherinfo = LookUp.loc[element]
 st.write(furtherinfo) 
 
 fullEllist = []
 for i in furtherinfo['Further information'].tolist():
-  #LookUp['Further information'].apply(str)
+  i.apply(str)
   res = i.split('_')
   fullEllist = fullEllist + res
   
