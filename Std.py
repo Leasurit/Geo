@@ -48,8 +48,11 @@ st.write(furtherinfo)
 
 fullEllist = []
 for i in furtherinfo['Further information']:
-  res = i.split('_')
-  fullEllist = fullEllist + res
+  if i == str:
+    res = i.split('_')
+  else:
+    res.append(i)
+fullEllist = fullEllist + res
 
 #fullEllist = []
 #for i in furtherinfo['Further information'].tolist():
