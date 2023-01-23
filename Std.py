@@ -38,6 +38,12 @@ df_data_conc_only = df_data[fil]
 furtherinfo = LookUp.loc[element]
 st.write(furtherinfo) 
 
+fullEllist = []
+for i in furtherinfo['Further information'].tolist():
+  i.apply(str)
+  res = i.split('_')
+  fullEllist = fullEllist + res
+
 #fullEllist = []
 #for i in furtherinfo['Further information'].tolist():
   #i.apply(str)
@@ -48,12 +54,12 @@ st.write(furtherinfo)
 #fullEllist = fullEllist + res
 ## res is not defined
 
-fullEllist = []
-for i in furtherinfo['Further information'].tolist():
-  i.apply(str)
-  res = i.split('_')
-  fullEllist = fullEllist + res
-## cannot apply
+#fullEllist = []
+#for i in furtherinfo['Further information'].tolist():
+  #i.apply(str)
+  #res = i.split('_')
+  #fullEllist = fullEllist + res
+## 'str' object has no attribute 'apply'
 
 
 
