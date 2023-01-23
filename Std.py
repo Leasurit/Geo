@@ -42,6 +42,14 @@ fullEllist = []
 for i in furtherinfo['Further information'].tolist():
   res = i.split('_')
   fullEllist = fullEllist + res
+##'float' object has no attribute 'split'
+
+#fullEllist = []
+#for i in furtherinfo['Further information'].tolist():
+  #i.apply(str)
+  #res = i.split('_')
+  #fullEllist = fullEllist + res
+## 'str' object has no attribute 'apply'
 
 #fullEllist = []
 #for i in furtherinfo['Further information'].tolist():
@@ -53,18 +61,10 @@ for i in furtherinfo['Further information'].tolist():
 #fullEllist = fullEllist + res
 ## res is not defined
 
-#fullEllist = []
-#for i in furtherinfo['Further information'].tolist():
-  #i.apply(str)
-  #res = i.split('_')
-  #fullEllist = fullEllist + res
-## 'str' object has no attribute 'apply'
-
-
-
-  
 fil2 = df_data_conc_only['Standard'] == standard
 st.write(df_data_conc_only[fil2] + fullEllist)
+
+
   
 #st.write(fullEllist)
 
