@@ -49,7 +49,7 @@ st.write(furtherinfo)
 res = []
 for i in furtherinfo['Further information']:
   res = i.split('_')
-  st.write(res)
+st.write(res)
 
 #fullEllist = []
 #for i in furtherinfo['Further information'].tolist():
