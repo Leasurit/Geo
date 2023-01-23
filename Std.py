@@ -42,7 +42,9 @@ fullEllist = []
 for i in furtherinfo['Further information'].tolist():
   res = i.split('_')
   fullEllist = fullEllist + res
-##'float' object has no attribute 'split'
+## wenn mehr als 2 Elemente ausgewählt: 'float' object has no attribute 'split'
+## wenn nur 2 Elemente ausgewählt: ValueError: ('Lengths must match to compare', (13,), (1,))
+ 
 
 #fullEllist = []
 #for i in furtherinfo['Further information'].tolist():
