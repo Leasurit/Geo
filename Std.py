@@ -34,8 +34,8 @@ st.write("Please select an element / elements to see their concentrations for al
 fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 
-fil2 = df_data_conc_only['Standard'] == std_names
-st.write(df_data_conc_only[fil2])
+#fil2 = df_data_conc_only['Standard'] == std_names
+#st.write(df_data_conc_only[fil2])
 
 #furtherinfo = LookUp.loc[element]
 
