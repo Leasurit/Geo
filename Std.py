@@ -22,7 +22,7 @@ standard = st.sidebar.multiselect("Select a standard:", options = df_data["Stand
 
 st.write("Data for selected standard:")
 df_data_selection = df_data.query("Standard == @standard")
-st.dataframe(df_data_selection)
+st.dataframe(df_data_selection.T)
 
 #st.write(LookUp['Element'])
 #Element(e) auswählen und Infos aus df_data anzeigen. In LookUp schauen: Wenn nicht N/A in LookUp für diese Element(e) die eingetragenen Werte als Spalten aus df_data anzeigen
