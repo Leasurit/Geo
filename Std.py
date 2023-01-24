@@ -3,7 +3,7 @@ import streamlit as st
 import matplotlib as plt
 #import numpy as np
 
-st.title("Hello world!")
+st.title("Hello world")
 st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 LookUp = pd.read_csv('LookUpTable.csv', sep=';')
