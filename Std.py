@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import matplotlib as plt
-#import numpy as np
+import numpy as np
 
 st.title("Hello world")
 st.write('Data')
@@ -44,7 +44,7 @@ st.write('---')
 st.write(furtherinfo['Further information'].tolist())
 st.write('---')
 for i in furtherinfo['Further information'].tolist():
-  if i is NaN:
+  if np.isnan(i):
     res = i.split('_')
     fullEllist = fullEllist + res
   else:
