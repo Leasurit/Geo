@@ -40,7 +40,7 @@ st.write(furtherinfo)
 
 fullEllist = []
 for i in furtherinfo['Further information'].tolist():
-  if i is not none:
+  if len(i) > 0:
     res = i.split('_')
     fullEllist = fullEllist + res
   else:
