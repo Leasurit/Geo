@@ -48,8 +48,8 @@ for i in furtherinfo['Further information'].tolist():
     res = 'none'
 st.write(fullEllist)
 
-#fil2 = df_data['Standard'] == standard
-df_data(standard)
+fil2 = df_data['Standard'] == standard
+df_data_std = df_data[fil2]
 st.write(standard + fullEllist)
 
 
