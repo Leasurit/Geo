@@ -48,8 +48,8 @@ for i in furtherinfo['Further information'].tolist():
     res = 'none'
 st.write(fullEllist)
 
-fil2 = df_data['Standard'] == standard
-st.write(df_data[fil2] + fullEllist)
+#fil2 = df_data['Standard'] == standard
+st.write(standard + fullEllist)
 
 
 #furtherinfo = LookUp.loc[[element], ['Further information']]
