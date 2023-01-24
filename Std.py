@@ -49,7 +49,7 @@ for i in furtherinfo['Further information'].tolist():
 st.write(fullEllist)
 
 fil2 = df_data['Standard'] == standard
-st.write(df_data_conc_only[fil2] + fullEllist)
+st.write(df_data[fil2] + fullEllist)
 
 
 #furtherinfo = LookUp.loc[[element], ['Further information']]
