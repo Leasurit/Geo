@@ -49,7 +49,7 @@ for i in furtherinfo['Further information'].tolist():
 st.write(fullEllist)
 
 #fil2 = df_data['Standard'] == standard
-df_data(standard + fullEllist)
+df_data(standard)
 st.write(standard + fullEllist)
 
 
