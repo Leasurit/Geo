@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import matplotlib as plt
-import numpy as np
+#import numpy as np
 
 st.title("Hello world")
 st.write('Data')
@@ -40,9 +40,6 @@ st.write(furtherinfo)
 
 fullEllist = []
 
-st.write('---')
-st.write(furtherinfo['Further information'].tolist())
-st.write('---')
 for i in furtherinfo['Further information'].tolist():
   if isinstance(i, str):
     res = i.split('_')
