@@ -64,8 +64,8 @@ st.write(fullEllist) # wenn Element ausgewählt wird, das keinen Eintrag in Furt
 #fullEllist = fullEllist + res
 ## res is not defined
 
-fil2 = df_data_conc_only['Standard'] == standard
-st.write(df_data_conc_only[fil2] + fullEllist)
+#fil2 = df_data_conc_only['Standard'] == standard
+#st.write(df_data_conc_only[fil2] + fullEllist)
 
 
   
