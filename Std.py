@@ -44,7 +44,7 @@ st.write('---')
 st.write(furtherinfo['Further information'].tolist())
 st.write('---')
 for i in furtherinfo['Further information'].tolist():
-  if np.isnan(i):
+  if isinstance(i, str):
     res = i.split('_')
     fullEllist = fullEllist + res
   else:
