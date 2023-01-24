@@ -50,29 +50,8 @@ for i in furtherinfo['Further information'].tolist():
 ## wenn nur 2 Elemente ausgewählt: ValueError: ('Lengths must match to compare', (13,), (1,))
 st.write(fullEllist) # wenn Element ausgewählt wird, das keinen Eintrag in Further information hat, wird Liste nicht mehr angezeigt.
 
-
-#fullEllist = []
-#for i in furtherinfo['Further information'].tolist():
-  #i.apply(str)
-  #res = i.split('_')
-  #fullEllist = fullEllist + res
-## 'str' object has no attribute 'apply'
-
-#fullEllist = []
-#for i in furtherinfo['Further information'].tolist():
-  #i.apply(str)
-  #if i == str:
-    #res = i.split('_')
- # else: 
-    #fullEllist.append(i)
-#fullEllist = fullEllist + res
-## res is not defined
-
-#fil2 = df_data_conc_only['Standard'] == standard
-#st.write(df_data_conc_only[fil2] + fullEllist)
-
-
-  
+fil2 = df_data_conc_only['Standard'] == standard
+st.write(df_data_conc_only[fil2] + fullEllist)
 
 
 #furtherinfo = LookUp.loc[[element], ['Further information']]
