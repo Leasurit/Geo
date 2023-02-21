@@ -62,10 +62,13 @@ df_data['Standard'] # zeigt Spalte Standard
 dfselected = df_data[element + fullEllist]
 
 dfstd = df_data['Standard']
-dfstd = dfstd.join(dfselected)
-dfstd
-#dfneu = dfstd.join(dfselected)
-#dfneu
+dfstandard = pd.DataFrame(dfstd)
+dfstandard.columns = ['Standard']
+dfstandard
+
+dfstandard = dfstandard.join(dfselected)
+dfstandard
+
 
 st.write('dfselected')
 
