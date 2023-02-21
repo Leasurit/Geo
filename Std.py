@@ -36,9 +36,9 @@ fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 
 furtherinfo = LookUp.loc[element]
-st.write(furtherinfo) 
+#st.write(furtherinfo) 
 
-st.write('furtherinfo')
+#st.write('furtherinfo')
 
 fullEllist = []
 
@@ -48,18 +48,20 @@ for i in furtherinfo['Further information'].tolist():
     fullEllist = fullEllist + res
   else:
     res = 'none'
-st.write(fullEllist)
+#st.write(fullEllist)
 
-st.write('fullEllist')
+#st.write('fullEllist')
 
+#Anforderungen Befehl
 # Ich möchte ein Element / mehrere Elemente auswählen und dann alle Einträge, die es zu meiner Auswahl gibt für alle Standards angezeigt bekommen.
 # Es sollen also die Spalten Standard und zum Beispiel Al und Al2O3 meiner ursprünglichen Tabelle angezeigt werden
 # Vorgang: Element auswählen -> in der Look Up Tabelle schauen ob es weitere Einträge gibt -> wenn ja auch diese anzeigen -> alle relevanten Spalten in einer Tabelle
 
-df_data[fullEllist] # zeigt alle zusätzlichen Spalten zum ausgewählten Element
-df_data[element] # zeigt Spalten aller ausgewählten Elemente
-df_data['Standard'] # zeigt Spalte Standard
-dfselected = df_data[element + fullEllist]
+# Vorbereitung Befehl
+# df_data[fullEllist] # zeigt alle zusätzlichen Spalten zum ausgewählten Element
+# df_data[element] # zeigt Spalten aller ausgewählten Elemente
+# df_data['Standard'] # zeigt Spalte Standard
+# dfselected = df_data[element + fullEllist]
 
 dfstd = df_data['Standard']
 dfstandard = pd.DataFrame(dfstd)
@@ -69,13 +71,13 @@ dfstandard
 dfstandard = dfstandard.join(dfselected)
 dfstandard
 
+# Ende Befehl
 
-st.write('dfselected')
 
-dfselected = df_data[['Standard', fullEllist]]
+#dfselected = df_data[['Standard', fullEllist]]
 
-fil2 = df_data['Standard'] == standard
-df_data_std = df_data[fil2]
+#fil2 = df_data['Standard'] == standard
+#df_data_std = df_data[fil2]
 #st.write(standard + fullEllist)
 
 
