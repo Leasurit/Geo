@@ -84,7 +84,8 @@ dfstandard
 # Weiteres: Plots gut anordnen, Achsen beschriften, sinnvolle Werte/Größenordung
 
 # Vorbereitung Befehl
-
+st.write('Zelle')
+df_data['Concentration', element]
 
 x = std_names
 y = df_data[element]
