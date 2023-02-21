@@ -38,6 +38,8 @@ df_data_conc_only = df_data[fil]
 furtherinfo = LookUp.loc[element]
 st.write(furtherinfo) 
 
+st.write('furtherinfo')
+
 fullEllist = []
 
 for i in furtherinfo['Further information'].tolist():
@@ -47,6 +49,8 @@ for i in furtherinfo['Further information'].tolist():
   else:
     res = 'none'
 st.write(fullEllist)
+
+st.write('fullEllist')
 
 fil2 = df_data['Standard'] == standard
 df_data_std = df_data[fil2]
