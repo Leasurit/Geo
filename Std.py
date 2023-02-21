@@ -83,8 +83,11 @@ dfstandard
 # y-Achse: Elementkonzentration von ausgewähltem Element
 # Weiteres: Plots gut anordnen, Achsen beschriften, sinnvolle Werte/Größenordung
 
+# Vorbereitung Befehl
+
+
 x = std_names
-y = df[element]
+y = df_data[element]
 fig1, ax = plt.subplots()
 ax.scatter(x,y)
 #y = Concentration Element aus df_data abgreifen
