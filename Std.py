@@ -56,8 +56,10 @@ st.write('fullEllist')
 # Es sollen also die Spalten Standard und zum Beispiel Al und Al2O3 meiner ursprünglichen Tabelle angezeigt werden
 # Vorgang: Element auswählen -> in der Look Up Tabelle schauen ob es weitere Einträge gibt -> wenn ja auch diese anzeigen -> alle relevanten Spalten in einer Tabelle
 
-df_data[fullEllist] # zeigt alle zusätzlichen Spalten zum ausewählten Element
-df_data[element]
+df_data[fullEllist] # zeigt alle zusätzlichen Spalten zum ausgewählten Element
+df_data[element] # zeigt Spalten aller ausgewählten Elemente
+df_data['Standard'] # zeigt Spalte Standard
+df_data[element + fullEllist]
 
 st.write('dfselected')
 
