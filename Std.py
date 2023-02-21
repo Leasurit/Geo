@@ -36,7 +36,7 @@ fil = df_data['Constituent'] == 'Concentration'
 df_data_conc_only = df_data[fil]
 
 furtherinfo = LookUp.loc[element]
-st.write(furtherinfo) 
+#st.write(furtherinfo) 
 
 #st.write('furtherinfo')
 
@@ -48,7 +48,7 @@ for i in furtherinfo['Further information'].tolist():
     fullEllist = fullEllist + res
   else:
     res = 'none'
-st.write(fullEllist)
+#st.write(fullEllist)
 
 #st.write('fullEllist')
 
