@@ -59,7 +59,12 @@ st.write('fullEllist')
 df_data[fullEllist] # zeigt alle zusätzlichen Spalten zum ausgewählten Element
 df_data[element] # zeigt Spalten aller ausgewählten Elemente
 df_data['Standard'] # zeigt Spalte Standard
-df_data[element + fullEllist]
+dfselected = df_data[element + fullEllist]
+
+dfstd = df_data['Standard']
+dfneu = dfstd.join(dfselected)
+dfneu
+
 
 st.write('dfselected')
 
