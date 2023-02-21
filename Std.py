@@ -59,8 +59,9 @@ st.write('fullEllist')
 df_data['Standard']
 #zeigt Spalte Standards
 
-df_data['Standard', 'Al2O3']
-# zeigt die Spalten Standard und Al2O3
+st.write('dfselected')
+
+dfselected = df_data[['Standard', fullEllist]]
 
 fil2 = df_data['Standard'] == standard
 df_data_std = df_data[fil2]
