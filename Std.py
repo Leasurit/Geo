@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import matplotlib as plt
-import plotly.express as px
+#import plotly.express as px
 #import numpy as np
 
 st.title("Hello world!")
