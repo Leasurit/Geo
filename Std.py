@@ -50,7 +50,7 @@ st.write(fullEllist)
 
 fil2 = df_data['Standard'] == standard
 df_data_std = df_data[fil2]
-st.write(standard + fullEllist)
+#st.write(standard + fullEllist)
 
 
 #furtherinfo = LookUp.loc[[element], ['Further information']]
