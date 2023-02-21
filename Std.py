@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import matplotlib as plt
+import plotly.express as px
 #import numpy as np
 
 st.title("Hello world!")
@@ -61,6 +62,7 @@ for i in furtherinfo['Further information'].tolist():
 # df_data[fullEllist] # zeigt alle zusätzlichen Spalten zum ausgewählten Element
 # df_data[element] # zeigt Spalten aller ausgewählten Elemente
 # df_data['Standard'] # zeigt Spalte Standard
+
 dfselected = df_data[element + fullEllist]
 
 dfstd = df_data['Standard']
@@ -72,6 +74,42 @@ dfstandard = dfstandard.join(dfselected)
 dfstandard
 
 # Ende Befehl
+
+# Anforderungen Befehl
+# Soll die Konzentrationen für ausgewähltes Element von allen Standards in Plot zeigen
+# auch für Oxide und weitere Bestandteile (z.B. Carbon Inorga)?
+# wenn mehrere Element ausgewählt werden, sollen mehrere Plots erstellt werden
+# x-Achse: Standards 
+# y-Achse: Elementkonzentration von ausgewähltem Element
+# Weiteres: Plots gut anordnen, Achsen beschriften, sinnvolle Werte/Größenordung
+
+x = std_names
+y = df[element]
+fig1, ax = plt.subplots()
+ax.scatter(x,y)
+#y = Concentration Element aus df_data abgreifen
+
+#x = np.linspace(0, 50, 50)
+#fig1, ax = plt.subplots()
+#ax.plot(x, x**2)
+
+#st.pyplot(fig1)
+
+#st.write('Bastar Craton')
+#df = pd.read_csv('Bastar Craton.csv')
+
+#elements = ['Mg', 'Si', 'Fe']
+#optionx = st. selectbox ('Element x-axis:', (elements))
+#st.write('Selected:', optionx)
+#optiony = st. selectbox ('Element y-axis:', (elements))
+#st.write('Selected:', optiony)
+
+#x2 = df[optionx]
+#y = df[optiony]
+#fig2, ax = plt.subplots()
+#ax.scatter(x2, y)
+
+
 
 
 #dfselected = df_data[['Standard', fullEllist]]
