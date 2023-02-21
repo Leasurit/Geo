@@ -66,7 +66,7 @@ dfselected = df_data[element + fullEllist]
 dfstd = df_data['Standard']
 dfstandard = pd.DataFrame(dfstd)
 dfstandard.columns = ['Standard']
-dfstandard
+#dfstandard
 
 dfstandard = dfstandard.join(dfselected)
 dfstandard
