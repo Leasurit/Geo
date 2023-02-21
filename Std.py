@@ -85,7 +85,7 @@ dfstandard
 
 # Vorbereitung Befehl
 st.write('Zelle')
-df_data['Concentration', element]
+df_data['Concentration', 'Al']
 
 x = std_names
 y = df_data[element]
