@@ -52,6 +52,13 @@ st.write(fullEllist)
 
 st.write('fullEllist')
 
+# Ich möchte ein Element / mehrere Elemente auswählen und dann alle Einträge, die es zu meiner Auswahl gibt für alle Standards angezeigt bekommen.
+# Es sollen also die Spalten Standard und zum Beispiel Al und Al2O3 meiner ursprünglichen Tabelle angezeigt werden
+# Vorgang: Element auswählen -> in der Look Up Tabelle schauen ob es weitere Einträge gibt -> wenn ja auch diese anzeigen -> alle relevanten Spalten in einer Tabelle
+
+df_data['Standard']
+#zeigt Spalte Standards
+
 fil2 = df_data['Standard'] == standard
 df_data_std = df_data[fil2]
 #st.write(standard + fullEllist)
