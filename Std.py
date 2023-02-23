@@ -87,8 +87,10 @@ dfstandard
 
 # Jede Zeile zeigen in der Concentration steht
 zeilen = df_data[df_data['Constituent'] == 'Concentration'].index
+st.write(zeilen)
 Auswahl = df_data.columns.get_loc('Al')
 c = df_data.iloc[zeilen, Auswahl]
+st.write(c)
 plt.scatter(std_names, c)
 
 
