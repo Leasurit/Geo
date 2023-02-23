@@ -93,7 +93,7 @@ c = df_data.iloc[zeilen, Auswahl]
 st.write(c)
 plt.scatter(std_names, c)
 
-fig = px.scatter(x=std_names, y=c)
+fig = px.scatter(x=std_names, y=c, log_y=True)
 #fig.show()
 st.plotly_chart(fig)
   
