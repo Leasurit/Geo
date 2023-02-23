@@ -31,7 +31,6 @@ st.dataframe(df_data_selection.T)
 # Element auswählen
 elements = df_data.columns[26:104]
 element = st.sidebar.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
-st.write(element)
 
 st.write("Please select an element / elements to see their concentrations for all standards.")  
 fil = df_data['Constituent'] == 'Concentration'
@@ -39,8 +38,6 @@ df_data_conc_only = df_data[fil]
 
 furtherinfo = LookUp.loc[element]
 #st.write(furtherinfo) 
-
-#st.write('furtherinfo')
 
 fullEllist = []
 
@@ -51,8 +48,6 @@ for i in furtherinfo['Further information'].tolist():
   else:
     res = 'none'
 #st.write(fullEllist)
-
-#st.write('fullEllist')
 
 #Anforderungen Befehl
 # Ich möchte ein Element / mehrere Elemente auswählen und dann alle Einträge, die es zu meiner Auswahl gibt für alle Standards angezeigt bekommen.
@@ -100,36 +95,10 @@ for i in element:
   st.plotly_chart(fig2)
   
 
-#x = std_names
-#y = df_data[element]
+
 #fig1, ax = plt.subplots()
 #ax.scatter(x,y)
-#y = Concentration Element aus df_data abgreifen
 
-#x = np.linspace(0, 50, 50)
-#fig1, ax = plt.subplots()
-#ax.plot(x, x**2)
-
-#st.pyplot(fig1)
-
-#st.write('Bastar Craton')
-#df = pd.read_csv('Bastar Craton.csv')
-
-#elements = ['Mg', 'Si', 'Fe']
-#optionx = st. selectbox ('Element x-axis:', (elements))
-#st.write('Selected:', optionx)
-#optiony = st. selectbox ('Element y-axis:', (elements))
-#st.write('Selected:', optiony)
-
-#x2 = df[optionx]
-#y = df[optiony]
-#fig2, ax = plt.subplots()
-#ax.scatter(x2, y)
-
-
-
-
-#dfselected = df_data[['Standard', fullEllist]]
 
 #fil2 = df_data['Standard'] == standard
 #df_data_std = df_data[fil2]
