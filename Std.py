@@ -85,9 +85,6 @@ dfstandard
 # Weiteres: Plots gut anordnen, Achsen beschriften, sinnvolle Werte/Größenordung
 
 # Vorbereitung Befehl
-
-
-zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
 #Test: st.write(zeilen)
 #Auswahl = df_data.columns.get_loc('Al') # Spaltennummer von Element Al
 #c = df_data.iloc[zeilen, Auswahl] # Zeilen mit Concentration und Spaltennummer des Elements
@@ -95,6 +92,7 @@ zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile z
 #fig = px.scatter(x=std_names, y=c, log_y=True)
 #st.plotly_chart(fig)
 
+zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
 for i in element:
   auswahl = df_data.columns.get_loc(i)
   d = df_data.iloc[zeilen, auswahl]
