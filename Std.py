@@ -95,7 +95,7 @@ plt.scatter(std_names, c)
 
 fig = px.scatter(x=std_names, y=c)
 #fig.show()
-#st.plotly_chart(fig)
+st.plotly_chart(fig)
   
 
 #x = std_names
