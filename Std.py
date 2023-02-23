@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
-#import plotly.express as px
+import plotly.express as px
 #import numpy as np
 
 st.title("Hello world!")
@@ -93,6 +93,8 @@ c = df_data.iloc[zeilen, Auswahl]
 st.write(c)
 plt.scatter(std_names, c)
 
+fig = px.scatter(x=std_names, y=c)
+  
 
 #x = std_names
 #y = df_data[element]
