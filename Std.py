@@ -88,15 +88,18 @@ dfstandard
 
 
 zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
-st.write(zeilen)
-Auswahl = df_data.columns.get_loc('Al') # Spaltennummer von Element Al
-c = df_data.iloc[zeilen, Auswahl] # Zeilen mit Concentration und Spaltennummer des Elements
-st.write(c)
-#plt.scatter(std_names, c)
+#Test: st.write(zeilen)
+#Auswahl = df_data.columns.get_loc('Al') # Spaltennummer von Element Al
+#c = df_data.iloc[zeilen, Auswahl] # Zeilen mit Concentration und Spaltennummer des Elements
+# Test: st.write(c)
+#fig = px.scatter(x=std_names, y=c, log_y=True)
+#st.plotly_chart(fig)
 
-fig = px.scatter(x=std_names, y=c, log_y=True)
-#fig.show()
-st.plotly_chart(fig)
+for i in element:
+  auswahl = df_data.columns.get_loc(i)
+  d = f_data.iloc[zeilen, auswahl]
+  fig2 = px.scatter(x=std_names, y=d, log_y=True)
+  st.plotly_chart(fig)
   
 
 #x = std_names
