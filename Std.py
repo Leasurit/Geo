@@ -94,7 +94,7 @@ st.write(c)
 plt.scatter(std_names, c)
 
 fig = px.scatter(x=std_names, y=c)
-st.plotly_chart(fig)
+#st.plotly_chart(fig)
   
 
 #x = std_names
