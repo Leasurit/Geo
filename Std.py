@@ -85,13 +85,13 @@ dfstandard
 
 # Vorbereitung Befehl
 
-# Jede Zeile zeigen in der Concentration steht
-zeilen = df_data[df_data['Constituent'] == 'Concentration'].index
+
+zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
 st.write(zeilen)
-Auswahl = df_data.columns.get_loc(element)
-c = df_data.iloc[zeilen, Auswahl]
+Auswahl = df_data.columns.get_loc('Al') # Spaltennummer von Element Al
+c = df_data.iloc[zeilen, Auswahl] # Zeilen mit Concentration und Spaltennummer des Elements
 st.write(c)
-plt.scatter(std_names, c)
+#plt.scatter(std_names, c)
 
 fig = px.scatter(x=std_names, y=c, log_y=True)
 #fig.show()
