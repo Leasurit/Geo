@@ -84,13 +84,18 @@ dfstandard
 # Weiteres: Plots gut anordnen, Achsen beschriften, sinnvolle Werte/Größenordung
 
 # Vorbereitung Befehl
-st.write('Zelle')
-df_data['Concentration', 'Al']
 
-x = std_names
-y = df_data[element]
-fig1, ax = plt.subplots()
-ax.scatter(x,y)
+# Jede Zeile zeigen in der Concentration steht
+zeilen = df_data[df_data['Constituent'] == 'Concentration'].index
+Auswahl = df_data.columns.get_loc('Al')
+c = df_data.iloc[zeilen, Auswahl]
+plt.scatter(std_names, c)
+
+
+#x = std_names
+#y = df_data[element]
+#fig1, ax = plt.subplots()
+#ax.scatter(x,y)
 #y = Concentration Element aus df_data abgreifen
 
 #x = np.linspace(0, 50, 50)
