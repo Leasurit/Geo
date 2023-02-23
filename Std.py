@@ -99,7 +99,7 @@ for i in element:
   auswahl = df_data.columns.get_loc(i)
   d = df_data.iloc[zeilen, auswahl]
   fig2 = px.scatter(x=std_names, y=d, log_y=True)
-  st.plotly_chart(fig)
+  st.plotly_chart(fig2)
   
 
 #x = std_names
