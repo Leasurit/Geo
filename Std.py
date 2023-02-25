@@ -92,7 +92,7 @@ for i in element:
   auswahl = df_data.columns.get_loc(i)
   d = df_data.iloc[zeilen, auswahl]
   fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-  fig2.update_layout(labels={"std_names": "Standards", "d": "Concentration in ppm"})
+  fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
   st.plotly_chart(fig2)
 
 # labels={"std_names": "Standards", "d": "Concentration in ppm"}, funktioniert nicht
