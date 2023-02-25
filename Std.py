@@ -91,10 +91,16 @@ zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile z
 for i in element:
   auswahl = df_data.columns.get_loc(i)
   d = df_data.iloc[zeilen, auswahl]
-  fig2 = px.scatter(x=std_names, y=d, log_y=True, title = i, y_label='Concentration in ppm')
+  fig2 = px.scatter(x=std_names, y=d, log_y=True, title = i, labels={ "std_names": "Standards", "d": "SConcentration in ppm" })
   st.plotly_chart(fig2)
   
-
+(df, x="sepal_length", y="sepal_width", color="species",
+                 labels={
+                     "sepal_length": "Sepal Length (cm)",
+                     "sepal_width": "Sepal Width (cm)",
+                     "species": "Species of Iris"
+                 },
+                title="Manually Specified Labels")
 
 #fig1, ax = plt.subplots()
 #ax.scatter(x,y)
