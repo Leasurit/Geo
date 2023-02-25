@@ -90,8 +90,8 @@ dfstandard
 zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
 for i in element:
   auswahl = df_data.columns.get_loc(i)
-  Concentration = df_data.iloc[zeilen, auswahl]
-  fig2 = px.scatter(x=std_names, y='Concentration', log_y=True)
+  d = df_data.iloc[zeilen, auswahl]
+  fig2 = px.scatter(x=std_names, y=d, log_y=True)
   st.plotly_chart(fig2)
   
 
