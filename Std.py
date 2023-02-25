@@ -95,7 +95,7 @@ for i in element:
   fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
   st.plotly_chart(fig2)
 
-# labels={"std_names": "Standards", "d": "Concentration in ppm"}, funktioniert nicht
+# Ende Befehl
 
 #fig1, ax = plt.subplots()
 #ax.scatter(x,y)
