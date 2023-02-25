@@ -91,9 +91,11 @@ zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile z
 for i in element:
   auswahl = df_data.columns.get_loc(i)
   d = df_data.iloc[zeilen, auswahl]
-  fig2 = px.scatter(x=std_names, y=d, log_y=True, labels={std_names: "Standards", d: "Concentration in ppm"}, title = i)
+  fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+  fig2.update_layout(labels={"std_names": "Standards", "d": "Concentration in ppm"})
   st.plotly_chart(fig2)
 
+# labels={"std_names": "Standards", "d": "Concentration in ppm"}, funktioniert nicht
 
 #fig1, ax = plt.subplots()
 #ax.scatter(x,y)
