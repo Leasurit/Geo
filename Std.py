@@ -92,7 +92,6 @@ for i in element:
   auswahl = df_data.columns.get_loc(i)
   Concentration = df_data.iloc[zeilen, auswahl]
   fig2 = px.scatter(x=std_names, y='Concentration', log_y=True)
-  fig2.title(i)
   st.plotly_chart(fig2)
   
 
