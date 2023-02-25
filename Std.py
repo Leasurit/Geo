@@ -91,7 +91,8 @@ zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile z
 for i in element:
   auswahl = df_data.columns.get_loc(i)
   d = df_data.iloc[zeilen, auswahl]
-  fig2 = px.scatter(Standards=std_names, y=d, log_y=True)
+  fig2 = px.scatter(x=std_names, y=d, log_y=True)
+  fig2.title(i)
   st.plotly_chart(fig2)
   
 
