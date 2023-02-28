@@ -20,33 +20,66 @@ st.write(LookUp)
 st.sidebar.header("Select data:")
 # Standard auswählen
 standard = st.sidebar.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
+elements = df_data.columns[26:104]
+element = st.sidebar.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
 
-st.write("Data for selected standard:")
-df_data_selection = df_data.query("Standard == @standard")
-st.dataframe(df_data_selection.T)
+tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
+
+with tab1:
+   st.header("Please select a standard / standards to see all information.")
+   st.write("Data for selected standard:")
+   df_data_selection = df_data.query("Standard == @standard")
+   st.dataframe(df_data_selection.T)
+
+with tab2:
+   st.header("Please select an element / elements to see their concentrations for all standards.")
+   st.write("Please select an element / elements to see their concentrations for all standards.")  
+   fil = df_data['Constituent'] == 'Concentration'
+   df_data_conc_only = df_data[fil]
+
+   furtherinfo = LookUp.loc[element]
+   #st.write(furtherinfo) 
+
+   fullEllist = []
+
+   for i in furtherinfo['Further information'].tolist():
+     if isinstance(i, str):
+     res = i.split('_')
+     fullEllist = fullEllist + res
+   else:
+     res = 'none'
+    
+   dfselected = df_data[element + fullEllist]
+
+   dfstd = df_data['Standard']
+   dfstandard = pd.DataFrame(dfstd)
+   dfstandard.columns = ['Standard']
+   #dfstandard
+
+   dfstandard = dfstandard.join(dfselected)
+   dfstandard
+
+   zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
+   for i in element:
+     auswahl = df_data.columns.get_loc(i)
+     d = df_data.iloc[zeilen, auswahl]
+     fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+     fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
+     st.plotly_chart(fig2)
+
+with tab3:
+   st.header("An owl")
+   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+
+
 
 #st.write(LookUp['Element'])
 #Element(e) auswählen und Infos aus df_data anzeigen. In LookUp schauen: Wenn nicht N/A in LookUp für diese Element(e) die eingetragenen Werte als Spalten aus df_data anzeigen
 
 # Element auswählen
-elements = df_data.columns[26:104]
-element = st.sidebar.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
 
-st.write("Please select an element / elements to see their concentrations for all standards.")  
-fil = df_data['Constituent'] == 'Concentration'
-df_data_conc_only = df_data[fil]
 
-furtherinfo = LookUp.loc[element]
-#st.write(furtherinfo) 
 
-fullEllist = []
-
-for i in furtherinfo['Further information'].tolist():
-  if isinstance(i, str):
-    res = i.split('_')
-    fullEllist = fullEllist + res
-  else:
-    res = 'none'
 #st.write(fullEllist)
 
 #Anforderungen Befehl
@@ -59,15 +92,7 @@ for i in furtherinfo['Further information'].tolist():
 # df_data[element] # zeigt Spalten aller ausgewählten Elemente
 # df_data['Standard'] # zeigt Spalte Standard
 
-dfselected = df_data[element + fullEllist]
 
-dfstd = df_data['Standard']
-dfstandard = pd.DataFrame(dfstd)
-dfstandard.columns = ['Standard']
-#dfstandard
-
-dfstandard = dfstandard.join(dfselected)
-dfstandard
 
 # Ende Befehl
 
@@ -87,29 +112,11 @@ dfstandard
 #fig = px.scatter(x=std_names, y=c, log_y=True)
 #st.plotly_chart(fig)
 
-zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
-for i in element:
-  auswahl = df_data.columns.get_loc(i)
-  d = df_data.iloc[zeilen, auswahl]
-  fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-  fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
-  st.plotly_chart(fig2)
+
 
 # Ende Befehl
 
-tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
 
-with tab1:
-   st.header("A cat")
-   st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
-
-with tab2:
-   st.header("A dog")
-   st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
-
-with tab3:
-   st.header("An owl")
-   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
 
 #fig1, ax = plt.subplots()
 #ax.scatter(x,y)
