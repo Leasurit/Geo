@@ -44,8 +44,8 @@ with tab2:
 
    for i in furtherinfo['Further information'].tolist():
      if isinstance(i, str):
-     res = i.split('_')
-     fullEllist = fullEllist + res
+        res = i.split('_')
+        fullEllist = fullEllist + res
    else:
      res = 'none'
     
