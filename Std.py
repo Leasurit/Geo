@@ -26,13 +26,14 @@ element = st.sidebar.multiselect("Select an element", options=list(elements)) #,
 tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 
 with tab1:
-   st.header("Please select a standard / standards to see all information.")
+   st.header("Standard")
+   st.write("Please select a standard / standards to see all information.")
    st.write("Data for selected standard:")
    df_data_selection = df_data.query("Standard == @standard")
    st.dataframe(df_data_selection.T)
 
 with tab2:
-   st.header("Please select an element / elements to see their concentrations for all standards.")
+   st.header("Element")
    st.write("Please select an element / elements to see their concentrations for all standards.")  
    fil = df_data['Constituent'] == 'Concentration'
    df_data_conc_only = df_data[fil]
