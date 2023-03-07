@@ -54,7 +54,7 @@ with tab2:
    st.write("fullEllist")
    st.write(fullEllist)
    
-   for i in fullEllist:
+   #for i in fullEllist:
       
     
    dfselected = df_data[element + fullEllist]
