@@ -60,16 +60,11 @@ with tab2:
       for j in furtherinfo: #['Further information']
          if isinstance(j, str):
             res = j.split('_')
-            fullEllist.append(res)
          else:
             res = 'none'
-            
+      fullEllist.append(res)      
    fullEllist
    
-
-   
-      
-   #st.write(fullEllist)
     
    dfselected = df_data[fullEllist]
    st.write('dfselected')
