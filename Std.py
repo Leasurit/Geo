@@ -59,9 +59,9 @@ with tab2:
       for i in furtherinfo['Further information']:
          if isinstance(i, str):
             res = i.split('_')
-            fullEllist = fullEllist + res
          else:
             res = 'none'
+    fullEllist = element + res
    
       
    st.write(fullEllist)
