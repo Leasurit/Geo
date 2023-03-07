@@ -62,7 +62,7 @@ with tab2:
             res = j.split('_')
          else:
             res = 'none' 
-         fullEllist.append(res)
+      fullEllist.append(res)
    fullEllist
    
     
