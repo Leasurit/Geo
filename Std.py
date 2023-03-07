@@ -59,7 +59,7 @@ with tab2:
       for i in furtherinfo['Further information']:
          if isinstance(i, str):
             res = i.split('_')
-            fullEllist = fullEllist + element + res
+            fullEllist = fullEllist + res
          else:
             res = 'none'
    
