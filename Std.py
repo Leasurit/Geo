@@ -54,7 +54,7 @@ with tab2:
     
    dfselected = df_data[element + fullEllist]
    st.wirte("dfselected")
-   st.wirte(dfselected)
+   dfselected
 
    dfstd = df_data['Standard']
    dfstandard = pd.DataFrame(dfstd)
