@@ -38,24 +38,32 @@ with tab2:
    fil = df_data['Constituent'] == 'Concentration'
    df_data_conc_only = df_data[fil]
 
-   furtherinfo = LookUp.loc[element]
+   ###furtherinfo = LookUp.loc[element]
    #st.write(furtherinfo) 
-   st.write('element')
-   st.write(element)
+   ###st.write('element')
+   ###st.write(element)
 
    fullEllist = []
 
-   for i in furtherinfo['Further information'].tolist():
-     if isinstance(i, str):
-        res = i.split('_')
-        fullEllist = fullEllist + res
-   else:
-     res = 'none'
-   st.write("fullEllist")
-   st.write(fullEllist)
+   ###for i in furtherinfo['Further information'].tolist():
+     ###if isinstance(i, str):
+        ###res = i.split('_')
+        ###fullEllist = fullEllist + res
+   ###else:
+     ###res = 'none'
+   ###st.write("fullEllist")
+   ###st.write(fullEllist)
    
-   #for i in fullEllist:
+   for i in element:
+      furtherinfo = LookUp.loc[element]
+      for i in furtherinfo['Further information']:
+         if isinstance(i, str):
+            res = i.split('_')
+         else:
+            res = 'none'
+      fullEllist = fullEllist + element + res
       
+   st.write(fullEllist)
     
    dfselected = df_data[element + fullEllist]
    st.write('dfselected')
