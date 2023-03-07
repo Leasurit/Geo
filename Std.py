@@ -40,6 +40,8 @@ with tab2:
 
    furtherinfo = LookUp.loc[element]
    #st.write(furtherinfo) 
+   st.write('element')
+   st.write(element)
 
    fullEllist = []
 
@@ -51,6 +53,9 @@ with tab2:
      res = 'none'
    st.write("fullEllist")
    st.write(fullEllist)
+   
+   for i in fullEllist:
+      
     
    dfselected = df_data[element + fullEllist]
    st.write('dfselected')
