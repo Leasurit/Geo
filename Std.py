@@ -61,10 +61,10 @@ with tab2:
          
          if isinstance(j, str):
             res = j.split('_')
-         
+            fullEllist.append(res) 
          else:
             res = 'none' 
-   fullEllist.append(res)     
+       
    fullEllist
    
     
