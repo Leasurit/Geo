@@ -49,8 +49,12 @@ with tab2:
         fullEllist = fullEllist + res
    else:
      res = 'none'
+   st.write("fullEllist")
+   st.write(fullEllist)
     
    dfselected = df_data[element + fullEllist]
+   st.wirte("dfselected")
+   st.wirte(dfselected)
 
    dfstd = df_data['Standard']
    dfstandard = pd.DataFrame(dfstd)
