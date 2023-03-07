@@ -53,8 +53,8 @@ with tab2:
    st.write(fullEllist)
     
    dfselected = df_data[element + fullEllist]
-   st.wirte('dfselected')
-   dfselected
+   st.write('dfselected')
+   st.write(dfselected)
 
    dfstd = df_data['Standard']
    dfstandard = pd.DataFrame(dfstd)
