@@ -53,16 +53,16 @@ with tab2:
      ###res = 'none'
    ###st.write("fullEllist")
    ###st.write(fullEllist)
-   
+   furtherinfo = LookUp.loc[element]
    for i in element:
-      furtherinfo = LookUp.loc[element]
       fullEllist.append(i)
-      for i in furtherinfo['Further information']:
-         if isinstance(i, str):
-            res = i.split('_')
+      for j in furtherinfo['Further information']:
+         if isinstance(j, str):
+            res = j.split('_')
             fullEllist.append(res)
          else:
             res = 'none'
+            
    fullEllist
    
 
