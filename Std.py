@@ -68,7 +68,7 @@ with tab2:
 
    
       
-   st.write(fullEllist)
+   #st.write(fullEllist)
     
    dfselected = df_data[element + fullEllist]
    st.write('dfselected')
