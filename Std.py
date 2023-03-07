@@ -56,12 +56,16 @@ with tab2:
    
    for i in element:
       furtherinfo = LookUp.loc[element]
+      fullEllist.append(i)
       for i in furtherinfo['Further information']:
          if isinstance(i, str):
             res = i.split('_')
+            fullEllist.append(res)
          else:
             res = 'none'
-   fullEllist = element + res
+   fullEllist
+   
+
    
       
    st.write(fullEllist)
