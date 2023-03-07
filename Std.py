@@ -58,13 +58,13 @@ with tab2:
       furtherinfo = LookUp.loc[i]
       fullEllist.append(i)
       for j in furtherinfo: #['Further information']
-         fullEllist.append(res)
+         
          if isinstance(j, str):
             res = j.split('_')
          
          else:
             res = 'none' 
-        
+   fullEllist.append(res)     
    fullEllist
    
     
