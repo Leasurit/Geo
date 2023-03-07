@@ -61,7 +61,7 @@ with tab2:
             res = i.split('_')
          else:
             res = 'none'
-      fullEllist = fullEllist + element + res
+   fullEllist = fullEllist + element + res
       
    st.write(fullEllist)
     
