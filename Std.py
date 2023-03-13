@@ -70,6 +70,7 @@ with tab2:
       for i in sublist:
          flatelements.append(i)
    flatelements
+   st.write('flatelements')
    
     
    dfselected = df_data[flatelements]
