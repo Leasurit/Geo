@@ -87,7 +87,7 @@ with tab2:
    
    
     
-   dfselected = df_data[flatelements]
+   dfselected = df_data[flatlist]
    st.write('dfselected')
    st.write(dfselected)
 
