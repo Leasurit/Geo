@@ -65,11 +65,11 @@ with tab2:
             res = 'none'
    fullEllist
    
-flatelements = []
-for sublist in fullEllist:
-    for i in sublist:
-        flatelements.append(i)
-flatelements
+   flatelements = []
+   for sublist in fullEllist:
+      for i in sublist:
+         flatelements.append(i)
+   flatelements
    
     
    dfselected = df_data[flatelements]
