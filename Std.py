@@ -65,6 +65,14 @@ with tab2:
             res = 'none'
    fullEllist
    
+  ### flat nested list
+
+   flatlist=[]
+      for sublist in nestedlist:
+         for element in sublist:
+            flatlist.append(element)
+   print(flatlist)
+
   # flatelements = []
    #for sublist in fullEllist:
       #for item in sublist:
@@ -75,8 +83,8 @@ with tab2:
    #flat = [item for sublist in fullEllist for item in sublist]
    #fullEllist = [item for items in fullEllist for item in items]
    #fullEllist = sum(fullEllist, [])
-   fullEllist = reduce(lambda x,y: x+y, fullEllist)
-   st.write('flatelements ')
+   #fullEllist = reduce(lambda x,y: x+y, fullEllist)
+   
    
     
    dfselected = df_data[flatelements]
