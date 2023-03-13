@@ -3,6 +3,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
+from itertools import chain
 
 st.title("Hello world!")
 st.write('Data')
@@ -67,25 +68,17 @@ with tab2:
    
   ### flat nested list
 
-   flatlist=[]
-   for sublist in fullEllist:
-      for element in sublist:
-         flatlist.append(element)
-   flatlist
-
-  # flatelements = []
+   #flatlist=[]
    #for sublist in fullEllist:
-      #for item in sublist:
-         #flatelements.append(item)
-   #flatelements
-   
+      #for element in sublist:
+         #flatlist.append(element)
+   #flatlist
    
    #flat = [item for sublist in fullEllist for item in sublist]
    #fullEllist = [item for items in fullEllist for item in items]
    #fullEllist = sum(fullEllist, [])
    #fullEllist = reduce(lambda x,y: x+y, fullEllist)
-   
-   
+   fullEllist = list(chain(*fullEllist))
     
    dfselected = df_data[flatlist]
    st.write('dfselected')
