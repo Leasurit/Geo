@@ -66,9 +66,9 @@ with tab2:
    fullEllist
    
    flatelements = []
-   for i in fullEllist:
-      #for i in sublist:
-       flatelements.append(i)
+   for sublist in fullEllist:
+      for item in sublist:
+         flatelements.append(item)
    flatelements
    st.write('flatelements')
    
