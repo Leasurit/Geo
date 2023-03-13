@@ -72,8 +72,9 @@ with tab2:
    #flatelements
    
    
-   flat = [item for sublist in fullEllist for item in sublist]
-   flat
+   #flat = [item for sublist in fullEllist for item in sublist]
+   fullEllist = [item for items in fullEllist for item in items]
+   fullEllist
    st.write('flatelements')
    
     
