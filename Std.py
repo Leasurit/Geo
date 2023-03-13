@@ -79,10 +79,11 @@ with tab2:
    #flat = [item for sublist in fullEllist for item in sublist]
    #fullEllist = [item for items in fullEllist for item in items]
    #fullEllist = sum(fullEllist, [])
-   #fullEllist = reduce(lambda x,y: x+y, fullEllist)
    #fullEllist = list(chain(*fullEllist))
    #print(list(np.array(fullEllist).flat))
-   flat_list = np.concatenate(fullEllist)
+   #flat_list = np.concatenate(fullEllist)
+   flat_list = reduce(lambda x, y: x+y, fullEllist)
+   flat_list
    
     
    dfselected = df_data[flatlist]
