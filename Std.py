@@ -68,9 +68,9 @@ with tab2:
   ### flat nested list
 
    flatlist=[]
-      for sublist in nestedlist:
-         for element in sublist:
-            flatlist.append(element)
+   for sublist in nestedlist:
+      for element in sublist:
+         flatlist.append(element)
    print(flatlist)
 
   # flatelements = []
