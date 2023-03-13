@@ -3,5 +3,3 @@ pandas
 streamlit
 plotly
 numpy
-operator
-reduce
