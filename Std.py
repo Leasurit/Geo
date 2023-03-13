@@ -3,8 +3,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
-import operator
-import reduce
+#import operator
+#import reduce
 
 
 st.title("Hello world!")
@@ -82,8 +82,8 @@ with tab2:
    #fullEllist = list(chain(*fullEllist))
    #print(list(np.array(fullEllist).flat))
    #flat_list = np.concatenate(fullEllist)
-   flat_list = reduce(lambda x, y: x+y, fullEllist)
-   flat_list
+   #flat_list = reduce(lambda x, y: x+y, fullEllist)
+   
    
     
    dfselected = df_data[flatlist]
