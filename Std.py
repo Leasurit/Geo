@@ -3,7 +3,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
-from itertools import chain
+import itertools
 
 st.title("Hello world!")
 st.write('Data')
