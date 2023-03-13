@@ -71,7 +71,7 @@ with tab2:
    for sublist in fullEllist:
       for element in sublist:
          flatlist.append(element)
-   print(flatlist)
+   flatlist
 
   # flatelements = []
    #for sublist in fullEllist:
