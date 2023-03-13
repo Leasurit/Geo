@@ -3,9 +3,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
-#import operator
-#import reduce
-
 
 st.title("Hello world!")
 st.write('Data')
@@ -84,8 +81,6 @@ with tab2:
    #flat_list = np.concatenate(fullEllist)
    #flat_list = reduce(lambda x, y: x+y, fullEllist)
    
-   
-    
    dfselected = df_data[flatlist]
    st.write('dfselected')
    st.write(dfselected)
@@ -115,12 +110,6 @@ with tab3:
 #st.write(LookUp['Element'])
 #Element(e) auswählen und Infos aus df_data anzeigen. In LookUp schauen: Wenn nicht N/A in LookUp für diese Element(e) die eingetragenen Werte als Spalten aus df_data anzeigen
 
-# Element auswählen
-
-
-
-#st.write(fullEllist)
-
 #Anforderungen Befehl
 # Ich möchte ein Element / mehrere Elemente auswählen und dann alle Einträge, die es zu meiner Auswahl gibt für alle Standards angezeigt bekommen.
 # Es sollen also die Spalten Standard und zum Beispiel Al und Al2O3 meiner ursprünglichen Tabelle angezeigt werden
@@ -130,9 +119,6 @@ with tab3:
 # df_data[fullEllist] # zeigt alle zusätzlichen Spalten zum ausgewählten Element
 # df_data[element] # zeigt Spalten aller ausgewählten Elemente
 # df_data['Standard'] # zeigt Spalte Standard
-
-
-
 # Ende Befehl
 
 # Anforderungen Befehl
@@ -150,35 +136,16 @@ with tab3:
 # Test: st.write(c)
 #fig = px.scatter(x=std_names, y=c, log_y=True)
 #st.plotly_chart(fig)
-
-
-
 # Ende Befehl
-
-
-
-#fig1, ax = plt.subplots()
-#ax.scatter(x,y)
-
 
 #fil2 = df_data['Standard'] == standard
 #df_data_std = df_data[fil2]
 #st.write(standard + fullEllist)
 
-
 #furtherinfo = LookUp.loc[[element], ['Further information']]
 #st.write(df_data_conc_only[["Standard"] + element + furtherinfo])
 
-#if options in LookUp further ist ungleich N/A
-#  st.write(LookUp['Eintrag in LookUp']
-
 #st.write(df_data_conc_only2[["Standard"] + element])
-
-#Gestein auswählen
-#rocktype = st.sidebar.multiselect("Select your rock type:", options = df_metadata["Rock type"].unique(), default = df_data["Rock type"].unique())
-
-#st.write(df_data.iloc[:, 3:25])
-#st.write(df[oxide])
 
 ##Drag and drop Menü um Daten hinzuzufügen:
   #st.write('Add your own data:')
