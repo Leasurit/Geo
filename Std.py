@@ -74,8 +74,9 @@ with tab2:
    
    #flat = [item for sublist in fullEllist for item in sublist]
    #fullEllist = [item for items in fullEllist for item in items]
-   fullEllist = sum(fullEllist, [])
-   st.write('flatelements new')
+   #fullEllist = sum(fullEllist, [])
+   fullEllist = reduce(lambda x,y: x+y, fullEllist)
+   st.write('flatelements ')
    
     
    dfselected = df_data[flatelements]
