@@ -79,8 +79,8 @@ with tab2:
    #fullEllist = sum(fullEllist, [])
    #fullEllist = reduce(lambda x,y: x+y, fullEllist)
    #fullEllist = list(chain(*fullEllist))
-   list(numpy.array(fullEllist).flat
-   list
+   new = list(numpy.array(fullEllist).flat
+   new
     
    dfselected = df_data[flatlist]
    st.write('dfselected')
