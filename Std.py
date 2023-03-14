@@ -81,6 +81,8 @@ with tab2:
    dfselected = df_data[newlist]
    #st.write('dfselected')
    #st.write(dfselected)
+   
+   df_data['Standard', 'Constituent']
 
    dfstd = df_data['Standard']
    dfstandard = pd.DataFrame(dfstd)
