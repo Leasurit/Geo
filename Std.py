@@ -3,7 +3,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
-import collections
 
 st.title("Hello world!")
 st.write('Data')
@@ -81,6 +80,18 @@ with tab2:
    #print(list(np.array(fullEllist).flat))
    #flat_list = np.concatenate(fullEllist)
    #flat_list = reduce(lambda x, y: x+y, fullEllist)
+   
+   def flatten_list(fullEllist):
+    flat_list = []
+    # Iterate through the outer list
+    for element in fullEllist:
+        if type(element) is list:
+            # If the element is of type list, iterate through the sublist
+            for item in element:
+                flat_list.append(item)
+        else:
+            flat_list.append(element)
+    return flat_list
    
    dfselected = df_data[flatlist]
    st.write('dfselected')
