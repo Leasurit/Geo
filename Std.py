@@ -64,7 +64,7 @@ with tab2:
             fullEllist.append(res)
          else:
             res = 'none'
-   fullEllist
+   ### fullEllist
    
   ### flat nested list
    
@@ -76,7 +76,7 @@ with tab2:
       else:
          newlist.append(i)
       #newlist.append(i)
-   newlist
+   ### newlist
 
    dfselected = df_data[newlist]
    #st.write('dfselected')
