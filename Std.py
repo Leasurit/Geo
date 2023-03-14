@@ -54,6 +54,12 @@ with tab2:
    ###st.write("fullEllist")
    ###st.write(fullEllist)
    
+   newlist = []
+   for i in fullEllist:
+      newlist.append(i)
+   newlist
+      
+   
    for i in element:
       furtherinfo = LookUp.loc[i]
       fullEllist.append(i)
