@@ -38,8 +38,8 @@ with tab2:
    fil = df_data['Constituent'] == 'Concentration'
    df_data_conc_only = df_data[fil]
    new_header = df_data_conc_only.iloc[0] #grab the first row for the header
-   #df = df[1:] #take the data less the header row
-   df.columns = new_header #set the header row as the df header                            
+   #df_data_conc_only = df_data_conc_only[1:] #take the data less the header row
+   df_data_conc_only.columns = new_header #set the header row as the df header                            
                                 
 
    ###furtherinfo = LookUp.loc[element]
