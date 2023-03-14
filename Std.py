@@ -37,24 +37,17 @@ with tab2:
    st.write("Please select an element / elements to see their concentrations for all standards.")  
    fil = df_data['Constituent'] == 'Concentration'
    df_data_conc_only = df_data[fil]
+   new_header = df_data_conc_only.iloc[0] #grab the first row for the header
+   #df = df[1:] #take the data less the header row
+   df.columns = new_header #set the header row as the df header                            
+                                
 
    ###furtherinfo = LookUp.loc[element]
    #st.write(furtherinfo) 
-   ###st.write('element')
-   ###st.write(element)
+   #st.write(element)
 
    fullEllist = []
-
-   ###for i in furtherinfo['Further information'].tolist():
-     ###if isinstance(i, str):
-        ###res = i.split('_')
-        ###fullEllist = fullEllist + res
-   ###else:
-     ###res = 'none'
-   ###st.write("fullEllist")
-   ###st.write(fullEllist)
          
-   
    for i in element:
       furtherinfo = LookUp.loc[i]
       fullEllist.append(i)
@@ -67,7 +60,6 @@ with tab2:
    ### fullEllist
    
   ### flat nested list
-   
    newlist = []
    for i in fullEllist:
       if type(i) is list:
@@ -79,11 +71,7 @@ with tab2:
    ### newlist
 
    dfselected = df_data[newlist]
-   #st.write('dfselected')
    #st.write(dfselected)
-   
-   
- 
 
    dfstd = df_data[['Standard','Constituent']]
    dfstandard = pd.DataFrame(dfstd)
