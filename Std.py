@@ -87,7 +87,7 @@ with tab2:
       if type(i) is list:
          for j in list:
             newlist.append(j)
-         else
+         else:
             newlist.append(i)
       #newlist.append(i)
    newlist
