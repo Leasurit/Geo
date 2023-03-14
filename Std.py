@@ -82,16 +82,15 @@ with tab2:
    #flat_list = reduce(lambda x, y: x+y, fullEllist)
    
    #def flatten_list(lst):
-    flat_list = []
+   flat_list = []
     # Iterate through the outer list
-    for element in fullEllist:
-        if type(element) is list:
-            # If the element is of type list, iterate through the sublist
-            for item in element:
-                flat_list.append(item)
-        else:
+   for element in fullEllist:
+      if type(element) is list:
+         for item in element:
+            flat_list.append(item)
+         else:
             flat_list.append(element)
-    return flat_list
+   flat_list
 
    #flatten_list(fullEllist)
   
