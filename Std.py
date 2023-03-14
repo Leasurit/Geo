@@ -67,20 +67,6 @@ with tab2:
    fullEllist
    
   ### flat nested list
-
-   #flatlist=[]
-   #for sublist in fullEllist:
-      #for element in sublist:
-         #flatlist.append(element)
-   #flatlist
-   
-   #flat = [item for sublist in fullEllist for item in sublist]
-   #fullEllist = [item for items in fullEllist for item in items]
-   #fullEllist = sum(fullEllist, [])
-   #fullEllist = list(chain(*fullEllist))
-   #print(list(np.array(fullEllist).flat))
-   #flat_list = np.concatenate(fullEllist)
-   #flat_list = reduce(lambda x, y: x+y, fullEllist)
    
    newlist = []
    for i in fullEllist:
@@ -92,13 +78,9 @@ with tab2:
       #newlist.append(i)
    newlist
 
-   
-   
-  
-   
    dfselected = df_data[newlist]
-   st.write('dfselected')
-   st.write(dfselected)
+   #st.write('dfselected')
+   #st.write(dfselected)
 
    dfstd = df_data['Standard']
    dfstandard = pd.DataFrame(dfstd)
