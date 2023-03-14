@@ -85,7 +85,7 @@ with tab2:
    newlist = []
    for i in fullEllist:
       if type(i) is list:
-         for j in list:
+         for j in i:
             newlist.append(j)
          else:
             newlist.append(i)
