@@ -82,7 +82,7 @@ with tab2:
    #st.write('dfselected')
    #st.write(dfselected)
    
-   df_data['Standard', 'Constituent']
+   df_data.loc[['Standard'], ['Constituent']])
 
    dfstd = df_data['Standard']
    dfstandard = pd.DataFrame(dfstd)
