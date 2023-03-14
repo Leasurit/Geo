@@ -93,21 +93,10 @@ with tab2:
    newlist
 
    
-   #def flatten_list(lst):
-   flat_list = []
-    # Iterate through the outer list
-   for element in fullEllist:
-      if type(element) is list:
-         for item in element:
-            flat_list.append(item)
-         else:
-            flat_list.append(element)
-   flat_list
-
-   #flatten_list(fullEllist)
+   
   
    
-   dfselected = df_data[flatlist]
+   dfselected = df_data[newlist]
    st.write('dfselected')
    st.write(dfselected)
 
