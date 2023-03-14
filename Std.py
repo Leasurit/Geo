@@ -53,12 +53,7 @@ with tab2:
      ###res = 'none'
    ###st.write("fullEllist")
    ###st.write(fullEllist)
-   
-   newlist = []
-   for i in fullEllist:
-      newlist.append(i)
-   newlist
-      
+         
    
    for i in element:
       furtherinfo = LookUp.loc[i]
@@ -86,6 +81,12 @@ with tab2:
    #print(list(np.array(fullEllist).flat))
    #flat_list = np.concatenate(fullEllist)
    #flat_list = reduce(lambda x, y: x+y, fullEllist)
+   
+   newlist = []
+   for i in fullEllist:
+      newlist.append(i)
+   newlist
+
    
    #def flatten_list(lst):
    flat_list = []
