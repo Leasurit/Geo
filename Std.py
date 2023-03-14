@@ -30,18 +30,18 @@ with tab1:
    st.write("Please select a standard / standards to see all information.")
    st.write("Data for selected standard:")
    df_data_selection = df_data.query("Standard == @standard")
+   new_header = df_data_selection.iloc[0] #grab the first row for the header
+   df_data_selection = df_data_selection[1:] #take the data less the header row
+   df_data_selection.columns = new_header #set the header row as the df header 
    st.dataframe(df_data_selection.T)
+   
 
 with tab2:
    st.header("Element")
    st.write("Please select an element / elements to see their concentrations for all standards.")  
    fil = df_data['Constituent'] == 'Concentration'
    df_data_conc_only = df_data[fil]
-   new_header = df_data_conc_only.iloc[0] #grab the first row for the header
-   df_data_conc_only = df_data_conc_only[1:] #take the data less the header row
-   df_data_conc_only.columns = new_header #set the header row as the df header                            
-                                
-
+  
    ###furtherinfo = LookUp.loc[element]
    #st.write(furtherinfo) 
    #st.write(element)
