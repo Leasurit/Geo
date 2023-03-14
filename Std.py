@@ -87,7 +87,7 @@ with tab2:
 
    dfstd = df_data[['Standard','Constituent']]
    dfstandard = pd.DataFrame(dfstd)
-   dfstandard.columns = ['Standard']
+   dfstandard.columns = ['Standard', 'Constituent']
    #dfstandard
 
    dfstandard = dfstandard.join(dfselected)
