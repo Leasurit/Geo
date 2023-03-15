@@ -37,7 +37,8 @@ with tab1:
    st.write('Metadata for selected standard(s):')
    df_meta = pd.read_csv('Meta.csv', sep=';')
    df_meta
-   df_meta.loc['AGV-1', :]
+   versuch = df_meta.loc['AGV-1']
+   versuch
    
    standardlist = []
    for i in standard:
@@ -45,9 +46,10 @@ with tab1:
       standardlist.append(i)
       
    df_meta[standardlist]
-      
    
-
+   #result = df_meta.loc["Stuti"]
+   #result = df.loc[["Stuti", "Seema"]]
+    
 with tab2:
    st.header("Element")
    st.write("Please select an element / elements to see their concentrations for all standards.")  
