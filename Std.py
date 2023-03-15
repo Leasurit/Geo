@@ -30,12 +30,8 @@ with tab1:
    st.write("Please select a standard / standards to see all information.")
    st.write("Data for selected standard:")
    df_data_selection = df_data.query("Standard == @standard")
-   df_data_selection
+   ###df_data_selection
    #df_data_selection.index = df_data_selection['Standard']
-   #df_data_selection.rows = df_data_selection.iloc[:,0]
-   #new_header = df_data_selection.iloc[:, 0] #grab the first row for the header
-   #df_data_selection = df_data_selection[:, 1] #take the data less the header row
-   #df_data_selection.columns = new_header #set the header row as the df header 
    st.dataframe(df_data_selection.T)
    
 
