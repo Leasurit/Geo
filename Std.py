@@ -36,23 +36,14 @@ with tab1:
    
    st.write('Metadata for selected standard(s):')
    df_meta = pd.read_csv('Meta.csv', sep=';')
-   df_meta
    df_meta.set_index("Standard", inplace = True)
- 
-   #versuch = df_meta.loc['AGV-1']
-   #versuch
-   
+
    standardlist = []
    for i in standard:
-      #metadata = df_meta.loc[i]
       standardlist.append(i)
       
    metadata = df_meta.loc[standardlist]
    st.dataframe(metadata.T)
-   
-   
-   #result = df_meta.loc["Stuti"]
-   #result = df.loc[["Stuti", "Seema"]]
     
 with tab2:
    st.header("Element")
