@@ -88,7 +88,7 @@ with tab1:
 with tab2:
    st.header("Element")
    elements = df_data.columns[26:104]
-   element = st..multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
+   element = st.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
    st.write("Please select an element / elements to see their concentrations for all standards.")  
    fil = df_data['Constituent'] == 'Concentration'
    df_data_conc_only = df_data[fil]
