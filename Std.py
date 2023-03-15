@@ -40,7 +40,7 @@ with tab1:
    
    standardlist = []
    for i in standard:
-      metadata = Meta.loc[i]
+      metadata = df_meta.loc[i]
       standardlist.append(i)
       
    df_meta[standardlist]
