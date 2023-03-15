@@ -28,11 +28,13 @@ tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 with tab1:
    st.header("Standard")
    st.write("Please select a standard / standards to see all information.")
-   st.write("Data for selected standard:")
+   st.write("Data for selected standard(s):")
    df_data_selection = df_data.query("Standard == @standard")
    ###df_data_selection
    #df_data_selection.index = df_data_selection['Standard']
    st.dataframe(df_data_selection.T)
+   
+   st.write('Metadata for selected standard(s):')
    
 
 with tab2:
