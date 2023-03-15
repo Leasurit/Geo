@@ -37,6 +37,7 @@ with tab1:
    st.write('Metadata for selected standard(s):')
    df_meta = pd.read_csv('Meta.csv', sep=';')
    df_meta
+   df_meta.loc['AGV-1', :]
    
    standardlist = []
    for i in standard:
