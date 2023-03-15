@@ -38,6 +38,14 @@ with tab1:
    df_meta = pd.read_csv('Meta.csv', sep=';')
    df_meta
    
+   standardlist = []
+   for i in standard:
+      metadata = Meta.loc[i]
+      standardlist.append(i)
+      
+   df_meta[standardlist]
+      
+   
 
 with tab2:
    st.header("Element")
