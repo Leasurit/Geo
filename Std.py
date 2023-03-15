@@ -5,7 +5,7 @@ import plotly.express as px
 import numpy as np
 
 st.title("Hello world!")
-st.write('Data')
+###st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 LookUp = pd.read_csv('LookUpTable.csv', sep=';')
 #error_bad_lines=False
@@ -30,6 +30,7 @@ with tab1:
    st.write("Please select a standard / standards to see all information.")
    st.write("Data for selected standard:")
    df_data_selection = df_data.query("Standard == @standard")
+   df_data_selection
    #df_data_selection.rows = df_data_selection.iloc[:,0]
    #new_header = df_data_selection.iloc[:, 0] #grab the first row for the header
    #df_data_selection = df_data_selection[:, 1] #take the data less the header row
