@@ -47,7 +47,9 @@ with tab1:
       #metadata = df_meta.loc[i]
       standardlist.append(i)
       
-   df_meta.loc[standardlist]
+   metadata = df_meta.loc[standardlist]
+   st.dataframe(metadata.T)
+   
    
    #result = df_meta.loc["Stuti"]
    #result = df.loc[["Stuti", "Seema"]]
