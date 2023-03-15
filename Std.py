@@ -44,6 +44,43 @@ with tab1:
       
    metadata = df_meta.loc[standardlist]
    st.dataframe(metadata.T)
+   
+   ###TESTSTATION ###
+   
+   ### Cosmetics
+   
+   df_meta
+   
+   def dfdark(styler):
+    #styler.background_gradient(cmap='coolwarm')
+    #styler.color('white')
+    styler.set_table_styles([
+        {
+            "selector":"thead",
+            "props":[("background-color","grey")]
+        },
+        {
+            "selector":"tbody tr:nth-child(even)",
+            "props":[("background-color","lightgrey")]
+        },
+        {
+            "selector":"th.row_heading",
+            "props":[("background-color","grey")]
+        },
+        {
+            "selector":"td",
+            "props":[("border","white")]
+        },
+
+    ])
+    return styler
+    #styler.format(color='grey')
+
+#df=pd.DataFrame(index=np.arange(10),columns=[1,2],data=np.random.normal(size=[10,2]))
+
+   df_meta.style.pipe(dfdark)
+   
+   #df_meta.style.set_table_styles( [ {'selector': 'th', 'props': [('background-color', 'lightgray')] }, {'selector': 'tbody tr:nth-child(even)', 'props': [('background-color', EVEN_ROW_COLOR)] }])
     
 with tab2:
    st.header("Element")
