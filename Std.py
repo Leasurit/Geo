@@ -39,15 +39,15 @@ with tab1:
    df_meta
    df_meta.set_index("Standard", inplace = True)
  
-   versuch = df_meta.loc['AGV-1']
-   versuch
+   #versuch = df_meta.loc['AGV-1']
+   #versuch
    
    standardlist = []
    for i in standard:
-      metadata = df_meta.loc[i]
+      #metadata = df_meta.loc[i]
       standardlist.append(i)
       
-   df_meta[standardlist]
+   df_meta.loc[standardlist]
    
    #result = df_meta.loc["Stuti"]
    #result = df.loc[["Stuti", "Seema"]]
