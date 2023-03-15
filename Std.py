@@ -36,7 +36,7 @@ with tab1:
    
    st.write('Metadata for selected standard(s):')
    df_meta = pd.read_csv('Meta.csv', sep=';')
-   df_meta['Standard', :]
+   df_meta
    
 
 with tab2:
