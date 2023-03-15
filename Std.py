@@ -26,7 +26,7 @@ tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 
 with tab1:
    st.header("Standard")
-   standard = st.sidebar.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
+   standard = st.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
    st.write("Please select a standard / standards to see all information.")
    st.write("Data for selected standard(s):")
    df_data_selection = df_data.query("Standard == @standard")
@@ -88,7 +88,7 @@ with tab1:
 with tab2:
    st.header("Element")
    elements = df_data.columns[26:104]
-   element = st.sidebar.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
+   element = st..multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
    st.write("Please select an element / elements to see their concentrations for all standards.")  
    fil = df_data['Constituent'] == 'Concentration'
    df_data_conc_only = df_data[fil]
