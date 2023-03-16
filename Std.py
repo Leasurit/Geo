@@ -131,9 +131,13 @@ with tab2:
    for i in element:
      auswahl = df_data.columns.get_loc(i)
      d = df_data.iloc[zeilen, auswahl]
-     lin = st.checkbox('lin scale') 
-     log = st.checkbox('log scale')
-     if lin:
+      
+     st.radio('Choose a scale',options=["lin", "log"])
+      
+      
+     #lin = st.checkbox('lin scale') 
+     #log = st.checkbox('log scale')
+     if options = lin:
       fig2 = px.scatter(x=std_names, y=d,  title = i)
      else:
       fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
