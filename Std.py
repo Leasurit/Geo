@@ -17,11 +17,6 @@ LookUp.set_index("Element", inplace=True)
 ###st.write(LookUp) # zeigt Zusatzinformationen
 #st.write(LookUp.loc[['Al'], ['Further information']])
 
-#st.sidebar.header("Select data:")
-# Standard auswählen
-
-
-
 tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 
 with tab1:
@@ -136,9 +131,15 @@ with tab2:
    for i in element:
      auswahl = df_data.columns.get_loc(i)
      d = df_data.iloc[zeilen, auswahl]
-     fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-     fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
-     st.plotly_chart(fig2)
+     lin = st.checkbox('lin scale') 
+     log = st.checkbox('log scale')
+     if lin:
+      fig2 = px.scatter(x=std_names, y=d, log_y=False,  title = i)
+     else:
+      fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+     #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+      fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
+      st.plotly_chart(fig2)
 
 with tab3:
    st.header("An owl")
