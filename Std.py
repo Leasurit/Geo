@@ -44,8 +44,8 @@ with tab1:
    
    ### Cosmetics
    
-   df_meta
-   st.write('meta normal')
+   #df_meta
+   #st.write('meta normal')
    
    def dfdark(styler):
     #styler.background_gradient(cmap='coolwarm')
@@ -76,7 +76,7 @@ with tab1:
 
    #df_meta.style.pipe(dfdark)
    #dfdark(df_meta)
-   st.write('meta neu')
+   #st.write('meta neu')
    
    #df_meta.style.set_table_styles( [ {'selector': 'th', 'props': [('background-color', 'lightgray')] }, {'selector': 'tbody tr:nth-child(even)', 'props': [('background-color', EVEN_ROW_COLOR)] }])
     
