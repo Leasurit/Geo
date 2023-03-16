@@ -132,10 +132,11 @@ with tab2:
      auswahl = df_data.columns.get_loc(i)
      d = df_data.iloc[zeilen, auswahl]
      scale = st.radio('Choose a scale', ("lin", "log"))
-     if scale == 'lin':
-      fig2 = px.scatter(x=std_names, y=d, yaxis.type: 'lin', title = i)
+     if scale == 'log':
+         fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
      else:
-      fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+         fig2 = px.scatter(x=std_names, y=d, title = i)
+      
      #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
       fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
       st.plotly_chart(fig2)
