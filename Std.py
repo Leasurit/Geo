@@ -154,24 +154,14 @@ with tab2:
    for i in element:
      auswahl = df_data.columns.get_loc(i)
      d = df_data.iloc[zeilen, auswahl]
-     #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-     #fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
-     #st.plotly_chart(fig2)
-   
-   
-      updatemenus = [dict(type="buttons",direction="left",buttons=list([
-            dict(
-                args=[{'yaxis.type': 'linear'}],
-                label="Linear Scale",
-                method="relayout"
-            ),
-            dict(
+     updatemenus = [dict(type="buttons",direction="left",buttons=list([dict(args=[{'yaxis.type': 'linear'}],label="Linear Scale",method="relayout"),
+           dict(
                 args=[{'yaxis.type': 'log'}],
                 label="Log Scale",
                 method="relayout" )  ]) ),]
-      fig2 = px.scatter(x=std_names, y=d,  title = i)
-      fig2.update_layout(updatemenus=updatemenus)
-      st.plotly_chart(fig2)
+     fig2 = px.scatter(x=std_names, y=d,  title = i)
+     fig2.update_layout(updatemenus=updatemenus)
+     st.plotly_chart(fig2)
    
    
 with tab3:
