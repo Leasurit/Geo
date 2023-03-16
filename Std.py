@@ -132,7 +132,7 @@ with tab2:
      auswahl = df_data.columns.get_loc(i)
      d = df_data.iloc[zeilen, auswahl]
      scale = st.radio('Choose a scale', ("lin", "log"))
-     if scale == 'log':
+     if scale == "log":
          fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
      else:
          fig2 = px.scatter(x=std_names, y=d, title = i)
