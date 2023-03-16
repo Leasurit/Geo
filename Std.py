@@ -74,8 +74,8 @@ with tab1:
 
 #df=pd.DataFrame(index=np.arange(10),columns=[1,2],data=np.random.normal(size=[10,2]))
 
-   df_meta.style.pipe(dfdark)
-   dfdark(df_meta)
+   #df_meta.style.pipe(dfdark)
+   #dfdark(df_meta)
    st.write('meta neu')
    
    #df_meta.style.set_table_styles( [ {'selector': 'th', 'props': [('background-color', 'lightgray')] }, {'selector': 'tbody tr:nth-child(even)', 'props': [('background-color', EVEN_ROW_COLOR)] }])
