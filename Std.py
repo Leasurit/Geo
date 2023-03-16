@@ -160,7 +160,7 @@ with tab2:
                 label="Log Scale",
                 method="relayout" )  ]) ),]
      fig2 = px.scatter(x=std_names, y=d,  title = i)
-     fig2.update_layout(updatemenus=updatemenus)
+     fig2.update_layout(updatemenus=updatemenus, xaxis_title="Standards", yaxis_title="Concentration in ppm")
      st.plotly_chart(fig2)
    
    
