@@ -4,14 +4,6 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
 
-config.toml:
-   [theme]
-primaryColor="green"
-backgroundColor="#0E1117"
-secondaryBackgroundColor="#262730"
-textColor="#FAFAFA"
-font="sans serif"
-
 st.title("Hello world!")
 ###st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
