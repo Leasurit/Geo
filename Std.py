@@ -127,20 +127,53 @@ with tab2:
    dfstandard = dfstandard.join(dfselected)
    dfstandard
 
+   #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
+   #for i in element:
+     #auswahl = df_data.columns.get_loc(i)
+     #d = df_data.iloc[zeilen, auswahl]
+     #scale = st.radio('Choose a scale', ("linear scale", "log scale"))
+     #if scale == "log scale":
+         #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+     #else:
+         #fig2 = px.scatter(x=std_names, y=d, title = i)
+      
+     #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+         #fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
+         #st.plotly_chart(fig2)
+         
+   #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
+   #for i in element:
+     #auswahl = df_data.columns.get_loc(i)
+     #d = df_data.iloc[zeilen, auswahl]
+     #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+     #fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
+     #st.plotly_chart(fig2)
+
+   
    zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
    for i in element:
      auswahl = df_data.columns.get_loc(i)
      d = df_data.iloc[zeilen, auswahl]
-     scale = st.radio('Choose a scale', ("linear scale", "log scale"))
-     if scale == "log scale":
-         fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-     else:
-         fig2 = px.scatter(x=std_names, y=d, title = i)
-      
      #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-         fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
-         st.plotly_chart(fig2)
-
+     #fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
+     #st.plotly_chart(fig2)
+   
+   
+      updatemenus = [dict(type="buttons",direction="left",buttons=list([
+            dict(
+                args=[{'yaxis.type': 'linear'}],
+                label="Linear Scale",
+                method="relayout"
+            ),
+            dict(
+                args=[{'yaxis.type': 'log'}],
+                label="Log Scale",
+                method="relayout" )  ]) ),]
+      fig2 = px.scatter(x=std_names, y=d,  title = i)
+      fig2.update_layout(updatemenus=updatemenus)
+      st.plotly_chart(fig2)
+   
+   
 with tab3:
    st.header("An owl")
    st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
