@@ -154,11 +154,8 @@ with tab2:
    for i in element:
      auswahl = df_data.columns.get_loc(i)
      d = df_data.iloc[zeilen, auswahl]
-     updatemenus = [dict(type="buttons",direction="left",buttons=list([dict(args=[{'yaxis.type': 'linear'}],label="Linear Scale",method="relayout"),
-           dict(
-                args=[{'yaxis.type': 'log'}],
-                label="Log Scale",
-                method="relayout" )  ]) ),]
+     updatemenus = [dict(type="buttons",direction="up",buttons=list([dict(args=[{'yaxis.type': 'linear'}],label="Linear Scale",method="relayout"),
+           dict(args=[{'yaxis.type': 'log'}],label="Log Scale", method="relayout" )  ]) ),]
      fig2 = px.scatter(x=std_names, y=d,  title = i)
      fig2.update_layout(updatemenus=updatemenus, xaxis_title="Standards", yaxis_title="Concentration in ppm")
      st.plotly_chart(fig2)
