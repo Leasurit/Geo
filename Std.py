@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
 
-
 primaryColor="green"
 backgroundColor="#0E1117"
 secondaryBackgroundColor="#262730"
