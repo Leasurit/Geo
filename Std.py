@@ -137,7 +137,7 @@ with tab2:
       
      #lin = st.checkbox('lin scale') 
      #log = st.checkbox('log scale')
-     if options = lin:
+     if options == lin:
       fig2 = px.scatter(x=std_names, y=d,  title = i)
      else:
       fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
