@@ -26,7 +26,7 @@ with tab1:
       df_data_selection = df_data.query("Standard == @standard")
       ###df_data_selection
       #df_data_selection.index = df_data_selection['Standard']
-      st.dataframe(df_data_selection.T)
+      st.dataframe(df_data_selection.T, index=False)
 
       st.write('Information for the selected standard(s):')
       df_meta = pd.read_csv('Meta.csv', sep=';')
@@ -37,7 +37,7 @@ with tab1:
          standardlist.append(i)
 
       metadata = df_meta.loc[standardlist]
-      st.dataframe(metadata.T, index=False)
+      st.dataframe(metadata.T)
 
       ###TESTSTATION ###
 
