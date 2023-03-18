@@ -82,7 +82,7 @@ with tab1:
 with tab2:
    elements = df_data.columns[26:104]
    element = st.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
-   if element > 0:
+   if len(element) > 0:
       fil = df_data['Constituent'] == 'Concentration'
       df_data_conc_only = df_data[fil]
 
