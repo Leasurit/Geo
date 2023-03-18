@@ -27,8 +27,8 @@ with tab1:
       ###df_data_selection
       #df_data_selection.index = df_data_selection['Standard']
       st.dataframe(df_data_selection.T)
-      st.write(df.to_string(index=False))
-      st.dataframe(df.to_string(index=False))
+      st.write(df_data_selection.to_string(index=False))
+      st.dataframe(df_data_selection.to_string(index=False))
 
       st.write('Information for the selected standard(s):')
       df_meta = pd.read_csv('Meta.csv', sep=';')
