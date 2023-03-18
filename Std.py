@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
 
-pd.set_option("max_colwidth", 400)
-
 st.title("IfG Powder Standards Database")
 ###st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
@@ -24,6 +22,7 @@ tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 with tab1:
    standard = st.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
    if len(standard) > 0:
+      pd.set_option("max_colwidth", 400)
       st.write("Element concentrations for selected standard(s):")
       df_data_selection = df_data.query("Standard == @standard")
       ###df_data_selection
