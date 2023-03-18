@@ -3,7 +3,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
-from IPython.display import HTML
 
 st.title("IfG Powder Standards Database")
 ###st.write('Data')
@@ -28,8 +27,6 @@ with tab1:
       ###df_data_selection
       #df_data_selection.index = df_data_selection['Standard']
       st.dataframe(df_data_selection.T)
-      st.write(HTML(df_data_selection.T.to_html(index=False)))
-      st.dataframe(HTML(df_data_selection.T.to_html(index=False)))
 
       st.write('Information for the selected standard(s):')
       df_meta = pd.read_csv('Meta.csv', sep=';')
