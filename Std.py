@@ -123,7 +123,7 @@ with tab2:
       #dfstandard
 
       dfstandard = dfstandard.join(dfselected)
-         dfstandard
+      dfstandard
 
       #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
       #for i in element:
