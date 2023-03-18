@@ -23,6 +23,7 @@ with tab1:
    st.header("Standard")
    standard = 0
    standard = st.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
+   st.write(standard)
    if standard == 0:
       st.write("Please select a standard / standards to see all information.")
    else:
