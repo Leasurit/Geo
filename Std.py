@@ -20,16 +20,15 @@ LookUp.set_index("Element", inplace=True)
 tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 
 with tab1:
-   st.header("Standard")
    standard = st.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
    if len(standard) > 0:
-      st.write("Data for selected standard(s):")
+      st.write("Element concentrations for selected standard(s):")
       df_data_selection = df_data.query("Standard == @standard")
       ###df_data_selection
       #df_data_selection.index = df_data_selection['Standard']
       st.dataframe(df_data_selection.T)
 
-      st.write('Metadata for selected standard(s):')
+      st.write('Information for the selected standard(s):')
       df_meta = pd.read_csv('Meta.csv', sep=';')
       df_meta.set_index("Standard", inplace = True)
 
@@ -81,84 +80,83 @@ with tab1:
       #df_meta.style.set_table_styles( [ {'selector': 'th', 'props': [('background-color', 'lightgray')] }, {'selector': 'tbody tr:nth-child(even)', 'props': [('background-color', EVEN_ROW_COLOR)] }])
     
 with tab2:
-   st.header("Element")
    elements = df_data.columns[26:104]
    element = st.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
-   st.write("Please select an element / elements to see their concentrations for all standards.")  
-   fil = df_data['Constituent'] == 'Concentration'
-   df_data_conc_only = df_data[fil]
-  
-   ###furtherinfo = LookUp.loc[element]
-   #st.write(furtherinfo) 
-   #st.write(element)
+   if element > 0:
+      fil = df_data['Constituent'] == 'Concentration'
+      df_data_conc_only = df_data[fil]
 
-   fullEllist = []
-         
-   for i in element:
-      furtherinfo = LookUp.loc[i]
-      fullEllist.append(i)
-      for j in furtherinfo: #['Further information']  
-         if isinstance(j, str):
-            res = j.split('_')
-            fullEllist.append(res)
+      ###furtherinfo = LookUp.loc[element]
+      #st.write(furtherinfo) 
+      #st.write(element)
+
+      fullEllist = []
+
+      for i in element:
+         furtherinfo = LookUp.loc[i]
+         fullEllist.append(i)
+         for j in furtherinfo: #['Further information']  
+            if isinstance(j, str):
+               res = j.split('_')
+               fullEllist.append(res)
+            else:
+               res = 'none'
+      ### fullEllist
+
+     ### flat nested list
+      newlist = []
+      for i in fullEllist:
+         if type(i) is list:
+            for j in i:
+               newlist.append(j)
          else:
-            res = 'none'
-   ### fullEllist
-   
-  ### flat nested list
-   newlist = []
-   for i in fullEllist:
-      if type(i) is list:
-         for j in i:
-            newlist.append(j)
-      else:
-         newlist.append(i)
-      #newlist.append(i)
-   ### newlist
+            newlist.append(i)
+         #newlist.append(i)
+      ### newlist
 
-   dfselected = df_data[newlist]
-   #st.write(dfselected)
+      dfselected = df_data[newlist]
+      #st.write(dfselected)
 
-   dfstd = df_data[['Standard','Constituent']]
-   dfstandard = pd.DataFrame(dfstd)
-   dfstandard.columns = ['Standard', 'Constituent']
-   #dfstandard
+      dfstd = df_data[['Standard','Constituent']]
+      dfstandard = pd.DataFrame(dfstd)
+      dfstandard.columns = ['Standard', 'Constituent']
+      #dfstandard
 
-   dfstandard = dfstandard.join(dfselected)
-   dfstandard
+      dfstandard = dfstandard.join(dfselected)
+         dfstandard
 
-   #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
-   #for i in element:
-     #auswahl = df_data.columns.get_loc(i)
-     #d = df_data.iloc[zeilen, auswahl]
-     #scale = st.radio('Choose a scale', ("linear scale", "log scale"))
-     #if scale == "log scale":
-         #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-     #else:
-         #fig2 = px.scatter(x=std_names, y=d, title = i)
-      
-     #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-         #fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
-         #st.plotly_chart(fig2)
-         
-   #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
-   #for i in element:
-     #auswahl = df_data.columns.get_loc(i)
-     #d = df_data.iloc[zeilen, auswahl]
-     #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-     #fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
-     #st.plotly_chart(fig2)
+      #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
+      #for i in element:
+        #auswahl = df_data.columns.get_loc(i)
+        #d = df_data.iloc[zeilen, auswahl]
+        #scale = st.radio('Choose a scale', ("linear scale", "log scale"))
+        #if scale == "log scale":
+            #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+        #else:
+            #fig2 = px.scatter(x=std_names, y=d, title = i)
 
-   
-   zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
-   for i in element:
-     auswahl = df_data.columns.get_loc(i)
-     d = df_data.iloc[zeilen, auswahl]
-     updatemenus = [dict(type="buttons",direction="right",buttons=list([dict(args=[{'yaxis.type': 'linear'}],label="Linear Scale",method="relayout"),
-           dict(args=[{'yaxis.type': 'log'}],label="Log Scale", method="relayout" )  ]) ),]
-     fig2 = px.scatter(x=std_names, y=d,  title = i)
-     fig2.update_layout(updatemenus=updatemenus, xaxis_title="Standards", yaxis_title="Concentration in ppm")
-     st.plotly_chart(fig2)
+        #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+            #fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
+            #st.plotly_chart(fig2)
+
+      #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
+      #for i in element:
+        #auswahl = df_data.columns.get_loc(i)
+        #d = df_data.iloc[zeilen, auswahl]
+        #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+        #fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
+        #st.plotly_chart(fig2)
+
+
+      zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
+      for i in element:
+        auswahl = df_data.columns.get_loc(i)
+        d = df_data.iloc[zeilen, auswahl]
+        updatemenus = [dict(type="buttons",direction="right",buttons=list([dict(args=[{'yaxis.type': 'linear'}],label="Linear Scale",method="relayout"),
+              dict(args=[{'yaxis.type': 'log'}],label="Log Scale", method="relayout" )  ]) ),]
+        fig2 = px.scatter(x=std_names, y=d,  title = i)
+        fig2.update_layout(updatemenus=updatemenus, xaxis_title="Standards", yaxis_title="Concentration in ppm")
+        st.plotly_chart(fig2)
    
    
 with tab3:
