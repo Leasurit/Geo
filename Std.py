@@ -37,7 +37,7 @@ with tab1:
          standardlist.append(i)
 
       metadata = df_meta.loc[standardlist]
-      st.dataframe(metadata.T)
+      st.dataframe(metadata.T, index=False)
 
       ###TESTSTATION ###
 
