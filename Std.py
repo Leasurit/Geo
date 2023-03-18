@@ -22,9 +22,7 @@ tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 with tab1:
    st.header("Standard")
    standard = st.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
-   if len(standard) == 0:
-      st.write("Please select a standard / standards to see all information.")
-   else:
+   if len(standard) > 0:
       st.write("Data for selected standard(s):")
       df_data_selection = df_data.query("Standard == @standard")
       ###df_data_selection
