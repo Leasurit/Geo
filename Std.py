@@ -20,7 +20,7 @@ LookUp.set_index("Element", inplace=True)
 tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 
 with tab1:
-   standard = st.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
+   standard = st.multiselect("Select one or more standards:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
    if len(standard) > 0:
       st.write("Element concentrations for selected standard(s):")
       df_data_selection = df_data.query("Standard == @standard")
@@ -81,7 +81,7 @@ with tab1:
     
 with tab2:
    elements = df_data.columns[26:104]
-   element = st.multiselect("Select an element", options=list(elements)) #, default=list(df_data.columns[26:27]))
+   element = st.multiselect("Select one or more elements", options=list(elements)) #, default=list(df_data.columns[26:27]))
    if len(element) > 0:
       fil = df_data['Constituent'] == 'Concentration'
       df_data_conc_only = df_data[fil]
