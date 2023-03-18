@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
 
-st.title("Hello world!")
+st.title("IfG Powder Standards Database")
 ###st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 LookUp = pd.read_csv('LookUpTable.csv', sep=';')
@@ -21,64 +21,67 @@ tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
 
 with tab1:
    st.header("Standard")
+   standard = 0
    standard = st.multiselect("Select a standard:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
-   st.write("Please select a standard / standards to see all information.")
-   st.write("Data for selected standard(s):")
-   df_data_selection = df_data.query("Standard == @standard")
-   ###df_data_selection
-   #df_data_selection.index = df_data_selection['Standard']
-   st.dataframe(df_data_selection.T)
-   
-   st.write('Metadata for selected standard(s):')
-   df_meta = pd.read_csv('Meta.csv', sep=';')
-   df_meta.set_index("Standard", inplace = True)
+   if standard = 0:
+      st.write("Please select a standard / standards to see all information.")
+   else:
+      st.write("Data for selected standard(s):")
+      df_data_selection = df_data.query("Standard == @standard")
+      ###df_data_selection
+      #df_data_selection.index = df_data_selection['Standard']
+      st.dataframe(df_data_selection.T)
 
-   standardlist = []
-   for i in standard:
-      standardlist.append(i)
-      
-   metadata = df_meta.loc[standardlist]
-   st.dataframe(metadata.T)
-   
-   ###TESTSTATION ###
-   
-   ### Cosmetics
-   
-   #df_meta
-   #st.write('meta normal')
-   
-   def dfdark(styler):
-    #styler.background_gradient(cmap='coolwarm')
-    #styler.color('white')
-    styler.set_table_styles([
-        {
-            "selector":"thead",
-            "props":[("background-color","grey")]
-        },
-        {
-            "selector":"tbody tr:nth-child(even)",
-            "props":[("background-color","lightgrey")]
-        },
-        {
-            "selector":"th.row_heading",
-            "props":[("background-color","grey")]
-        },
-        {
-            "selector":"td",
-            "props":[("border","white")]
-        },
+      st.write('Metadata for selected standard(s):')
+      df_meta = pd.read_csv('Meta.csv', sep=';')
+      df_meta.set_index("Standard", inplace = True)
 
-    ])
-    return styler
-    #styler.format(color='grey')
+      standardlist = []
+      for i in standard:
+         standardlist.append(i)
 
-#df=pd.DataFrame(index=np.arange(10),columns=[1,2],data=np.random.normal(size=[10,2]))
+      metadata = df_meta.loc[standardlist]
+      st.dataframe(metadata.T)
 
-   #df_meta.style.pipe(dfdark)
-   #dfdark(df_meta)
-   #st.write('meta neu')
-   
-   #df_meta.style.set_table_styles( [ {'selector': 'th', 'props': [('background-color', 'lightgray')] }, {'selector': 'tbody tr:nth-child(even)', 'props': [('background-color', EVEN_ROW_COLOR)] }])
+      ###TESTSTATION ###
+
+      ### Cosmetics
+
+      #df_meta
+      #st.write('meta normal')
+
+      def dfdark(styler):
+       #styler.background_gradient(cmap='coolwarm')
+       #styler.color('white')
+       styler.set_table_styles([
+           {
+               "selector":"thead",
+               "props":[("background-color","grey")]
+           },
+           {
+               "selector":"tbody tr:nth-child(even)",
+               "props":[("background-color","lightgrey")]
+           },
+           {
+               "selector":"th.row_heading",
+               "props":[("background-color","grey")]
+           },
+           {
+               "selector":"td",
+               "props":[("border","white")]
+           },
+
+       ])
+       return styler
+       #styler.format(color='grey')
+
+   #df=pd.DataFrame(index=np.arange(10),columns=[1,2],data=np.random.normal(size=[10,2]))
+
+      #df_meta.style.pipe(dfdark)
+      #dfdark(df_meta)
+      #st.write('meta neu')
+
+      #df_meta.style.set_table_styles( [ {'selector': 'th', 'props': [('background-color', 'lightgray')] }, {'selector': 'tbody tr:nth-child(even)', 'props': [('background-color', EVEN_ROW_COLOR)] }])
     
 with tab2:
    st.header("Element")
