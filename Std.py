@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import numpy as np
 
-pd.options.display.max_colwidth = 4
-
 st.title("IfG Powder Standards Database")
 ###st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
