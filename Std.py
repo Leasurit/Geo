@@ -168,7 +168,7 @@ with tab3:
    
    #rocktypelist = []
    for i in rocktype:
-      auswahl2 = df_meta.rows.get_loc(i)
+      auswahl2 = df_meta.get_loc(i)
       auswahl2
       #e = df_meta.iloc[auswahl2, 'Standard']
       #rocktypelist.append(i)
