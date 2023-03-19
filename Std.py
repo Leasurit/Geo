@@ -51,10 +51,10 @@ with tab1:
 
 # Define the CSS style
       def color_alternate_rows(index):
-      if index % 2 == 0:
-        return 'background-color: #f2f2f2'
-      else:
-        return 'background-color: #ffffff'
+         if index % 2 == 0:
+            return 'background-color: #f2f2f2'
+         else:
+            return 'background-color: #ffffff'
 
 # Apply the style to the dataframe
 
