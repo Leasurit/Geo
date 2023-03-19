@@ -172,7 +172,7 @@ with tab3:
       auswahl2 = df_meta.index[df_meta['rock type']==i]
       #auswahl2
       
-      df_meta.iloc[auswahl2,1]
+      df_meta.loc[auswahl2,1]
       #e = df_meta.iloc[auswahl2, 1]
       #rocktypelist.append(i)
       #typestd = df_meta.loc[rocktypelist]
