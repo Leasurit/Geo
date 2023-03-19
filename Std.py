@@ -172,7 +172,7 @@ with tab3:
       auswahl2
       
 
-[1, 2]
+#[1, 2]
       #e = df_meta.iloc[auswahl2, 'Standard']
       #rocktypelist.append(i)
       #typestd = df_meta.loc[rocktypelist]
