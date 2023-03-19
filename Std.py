@@ -167,6 +167,7 @@ with tab3:
    rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes)) # Ausgewählte Gesteine
    df_meta.set_index("rock type", inplace = True)
    df_meta.loc[rocktype, :]
+   st.write('To get more information about the standard(s) please switch to the tab "Standards".')
    
    #rocktypelist = []
    #for i in rocktype:
