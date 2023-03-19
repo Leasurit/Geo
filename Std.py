@@ -57,10 +57,10 @@ with tab1:
             return 'background-color: #ffffff'
 
 # Apply the style to the dataframe
-      styled_df1 = df_data.style.applymap(color_alternate_rows)
+      styled_df_data = df_data.style.applymap(color_alternate_rows)
          
 # Display the styled dataframe
-      styled_df1
+      styled_df_data
 
       def dfdark(styler):
        #styler.background_gradient(cmap='coolwarm')
