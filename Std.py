@@ -126,18 +126,18 @@ with tab2:
       dfstandard = dfstandard.join(dfselected)
       dfstandard
 
-      zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
-      for i in element:
+      zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Index der Zeilen, in denen Concentration steht
+      for i in element: # für jedes Element Spalte herausfinden, Wert Konzentration zusammen mit Zeile herausfinden, Auswahlmöglichkeiten, if/else
         auswahl = df_data.columns.get_loc(i) #Spalten der ausgewählten Elemente herausfinden
-        d = df_data.iloc[zeilen, auswahl] # Zeilen mit Konzentration der ausgewählten Elemente anzeigen
+        d = df_data.iloc[zeilen, auswahl] # Zeilen mit Konzentration der ausgewählten Elemente anzeigen # Konzentrationswerte aller Stabdards für Element
         scale = st.radio('Choose a scale', ("linear scale", "log scale"))
         if scale == "log scale":
             fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
         else:
             fig2 = px.scatter(x=std_names, y=d, title = i)
         #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
-      fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
-      st.plotly_chart(fig2)
+        fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
+        st.plotly_chart(fig2)
 
       #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
       #for i in element:
