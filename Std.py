@@ -166,7 +166,7 @@ with tab3:
    rocktypes = df_meta['rock type']
    rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes)) # Ausgewählte Gesteine
    df_meta.set_index("rock type", inplace = True)
-   df_meta[rocktype]
+   df_meta[rocktype, :]
    
    #rocktypelist = []
    #for i in rocktype:
