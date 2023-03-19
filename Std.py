@@ -168,7 +168,7 @@ with tab3:
    
    #rocktypelist = []
    for i in rocktype:
-      auswahl2 = df_meta.index[df_meta['rock type']==i].tolist()
+      auswahl2 = df_meta.index[df_meta['rock type']==i]
       auswahl2
       
 
