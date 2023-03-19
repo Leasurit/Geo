@@ -46,6 +46,22 @@ with tab1:
 
       #df_meta
       #st.write('meta normal')
+      
+    
+
+# Define the CSS style
+      def color_alternate_rows(index):
+      if index % 2 == 0:
+        return 'background-color: #f2f2f2'
+      else:
+        return 'background-color: #ffffff'
+
+# Apply the style to the dataframe
+
+      styled_df1 = metadata.style.applymap(color_alternate_rows)
+         
+# Display the styled dataframe
+      styled_df1
 
       def dfdark(styler):
        #styler.background_gradient(cmap='coolwarm')
