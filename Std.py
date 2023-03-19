@@ -166,12 +166,13 @@ with tab3:
    rocktypes = df_meta['rock type']
    rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes))
    
-   rocktypelist = []
+   #rocktypelist = []
    for i in rocktype:
-      rocktypelist.append(i)
-      typestd = df_meta.loc[rocktypelist]
-      st.dataframe(typestd.T)
-   
+      auswahl2 = df_meta.columns.get_loc(i)
+      e = df_meta.iloc[auswahl2, 'Standard']
+      #rocktypelist.append(i)
+      #typestd = df_meta.loc[rocktypelist]
+      #st.dataframe(typestd.T)
 
 
 
