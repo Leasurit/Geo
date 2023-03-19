@@ -180,8 +180,6 @@ with tab3:
 
       
      
-         
-     sollen Zeilen von ausgewähltem Gestein anzeigen
 
 
 #st.write(LookUp['Element'])
