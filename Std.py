@@ -164,15 +164,14 @@ with tab2:
 with tab3:
    st.header("Search")
    rocktypes = df_meta['rock type']
-   rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes))
-   df_meta.set_index("Standard", inplace = True)
+   rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes)) # Ausgewählte Gesteine
+   #df_meta.set_index("Standard", inplace = True)
    
    #rocktypelist = []
    for i in rocktype:
-      auswahl2 = df_meta.index[df_meta['rock type']==i]
+      auswahl2 = df_meta.index[df_meta['rock type']==i] # soll Zeilen aller ausgewählten Gesteine angeben
       #auswahl2
-      
-      df_meta.loc[auswahl2,1]
+      df_meta.iloc[auswahl2,1:2]
       #e = df_meta.iloc[auswahl2, 1]
       #rocktypelist.append(i)
       #typestd = df_meta.loc[rocktypelist]
