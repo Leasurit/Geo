@@ -57,8 +57,7 @@ with tab1:
             return 'background-color: #ffffff'
 
 # Apply the style to the dataframe
-
-      styled_df1 = metadata.style.applymap(color_alternate_rows)
+      styled_df1 = df_data.style.applymap(color_alternate_rows)
          
 # Display the styled dataframe
       styled_df1
