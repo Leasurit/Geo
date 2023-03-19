@@ -17,7 +17,7 @@ LookUp.set_index("Element", inplace=True)
 ###st.write(LookUp) # zeigt Zusatzinformationen
 #st.write(LookUp.loc[['Al'], ['Further information']])
 
-tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Owl"])
+tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Search"])
 
 with tab1:
    standard = st.multiselect("Select one or more standards:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
@@ -160,8 +160,10 @@ with tab2:
    
    
 with tab3:
-   st.header("An owl")
-   st.image("https://static.streamlit.io/examples/owl.jpg", width=200)
+   st.header(" Search")
+   rocktypes = df_meta["rock type"]
+   rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes))
+   
 
 
 
