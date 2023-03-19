@@ -18,7 +18,6 @@ LookUp.set_index("Element", inplace=True)
 ###st.write(LookUp) # zeigt Zusatzinformationen
 #st.write(LookUp.loc[['Al'], ['Further information']])
 
-
 tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Search"])
 
 with tab1:
@@ -129,14 +128,14 @@ with tab2:
 
       zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
       for i in element:
-        auswahl = df_data.columns.get_loc(i)
-        d = df_data.iloc[zeilen, auswahl]
+        auswahl = df_data.columns.get_loc(i) #Spalten der ausgewählten Elemente herausfinden
+        d = df_data.iloc[zeilen, auswahl] # Zeilen mit Konzentration der ausgewählten Elemente anzeigen
         scale = st.radio('Choose a scale', ("linear scale", "log scale"))
         if scale == "log scale":
             fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
         else:
             fig2 = px.scatter(x=std_names, y=d, title = i)
-        fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
+        #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
         fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
         st.plotly_chart(fig2)
 
