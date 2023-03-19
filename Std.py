@@ -8,6 +8,7 @@ st.title("IfG Powder Standards Database")
 ###st.write('Data')
 df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 LookUp = pd.read_csv('LookUpTable.csv', sep=';')
+df_meta = pd.read_csv('Meta.csv', sep=';')
 #error_bad_lines=False
 ### st.write(df_data) # zeigt alle Daten
 
@@ -16,6 +17,7 @@ std_names = df_data['Standard'].drop_duplicates()
 LookUp.set_index("Element", inplace=True)
 ###st.write(LookUp) # zeigt Zusatzinformationen
 #st.write(LookUp.loc[['Al'], ['Further information']])
+
 
 tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Search"])
 
@@ -29,7 +31,7 @@ with tab1:
       st.dataframe(df_data_selection.T)
 
       st.write('Information for the selected standard(s):')
-      df_meta = pd.read_csv('Meta.csv', sep=';')
+      #df_meta = pd.read_csv('Meta.csv', sep=';')
       df_meta.set_index("Standard", inplace = True)
 
       standardlist = []
