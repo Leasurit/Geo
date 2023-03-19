@@ -50,8 +50,8 @@ with tab1:
     
 
 # Define the CSS style
-      def color_alternate_rows(index):
-         if index % 2 == 0:
+      def color_alternate_rows(x):
+         if x[::2]
             return 'background-color: #f2f2f2'
          else:
             return 'background-color: #ffffff'
