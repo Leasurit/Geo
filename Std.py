@@ -172,13 +172,16 @@ with tab3:
    for i in rocktype:
       auswahl2 = df_meta.index[df_meta['rock type']==i] # soll Zeilen aller ausgewählten Gesteine angeben
       #auswahl2
-      df_meta.iloc[1, 1:2]
-      df_meta.iloc[auswahl2,1:2]
+   df_meta.iloc[auswahl2]
       #e = df_meta.iloc[auswahl2, 1]
       #rocktypelist.append(i)
       #typestd = df_meta.loc[rocktypelist]
       #st.dataframe(typestd.T)
 
+      
+     
+         
+     sollen Zeilen von ausgewähltem Gestein anzeigen
 
 
 #st.write(LookUp['Element'])
