@@ -161,8 +161,9 @@ with tab2:
    
 with tab3:
    st.header(" Search")
-   rocktypes = df_meta["rock type"]
-   rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes))
+   df_meta['rock type']
+   #rocktypes = df_meta["rock type"]
+   #rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes))
    
 
 
