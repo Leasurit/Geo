@@ -15,7 +15,7 @@ df_meta = pd.read_csv('Meta.csv', sep=';')
 std_names = df_data['Standard'].drop_duplicates()
 
 LookUp.set_index("Element", inplace=True)
-###st.write(LookUp) # zeigt Zusatzinformationen
+st.write(LookUp) # zeigt Zusatzinformationen
 #st.write(LookUp.loc[['Al'], ['Further information']])
 
 tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Search"])
