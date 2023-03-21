@@ -145,7 +145,7 @@ with tab2:
       for i in element: # für jedes Element Spalte herausfinden, Wert Konzentration zusammen mit Zeile herausfinden, Auswahlmöglichkeiten, if/else
         auswahl = df_data.columns.get_loc(i) #Spalten der ausgewählten Elemente herausfinden
         d = df_data.iloc[zeilen, auswahl] # Zeilen mit Konzentration der ausgewählten Elemente anzeigen # Konzentrationswerte aller Stabdards für Element
-        scale = st.radio('Choose a scale', ("linear scale", "log scale"), key="scalelinlog")
+        scale = st.radio('Choose a scale', ("linear scale", "log scale"), key=i)
         if scale == "log scale":
             fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
         else:
