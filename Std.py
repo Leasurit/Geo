@@ -200,7 +200,7 @@ with tab4:
    st.write("Please select a standard to see the corresponding information.")
    type = st.radio('Choose a standard', ("CI Chondrite", "E-MORB", "N-MORB", "OIB", "PM"))
    df_ci.set_index("Rock", inplace = True)
-   st.write(df_ci)
+   #st.write(df_ci)
    df_ci.loc[type, :]
    
       
