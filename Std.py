@@ -199,7 +199,7 @@ with tab4:
    st.header("CI, MORB, OIB, PM")
    st.write("Please select a standard to see the corresponding information.")
    st.write(df_ci)
-   type = st.radio('Choose a standard', ("CI-Chondrite", "E-MORB", "N-MORB", "OIB", "PM"))
+   type = st.radio('Choose a standard', ("CI Chondrite", "E-MORB", "N-MORB", "OIB", "PM"))
    df_ci.set_index("Rock", inplace = True)
    df_meta.loc[type, :]
    
