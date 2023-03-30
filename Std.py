@@ -184,6 +184,17 @@ with tab3:
    df_meta.loc[rocktype, :]
    st.write('To get more information about the standard(s) please switch to the tab "Standards".')
    
+   ###Vorbereitung neue Suchoptionen:
+   #producers = df_alplst['Producer']
+   #producer = st.multiselect("Select one or more producers", options=list(producers)) 
+   #df_alplst.set_index("Producer", inplace = True)
+   #df_alplst.loc[Producer, :]
+   
+   #locations = df_alplst['Location']
+   #producer = st.multiselect("Select one or more locations", options=list(locations)) 
+   #df_alplst.set_index("Location", inplace = True)
+   #df_alplst.loc[Location, :]
+   
    #rocktypelist = []
    #for i in rocktype:
       #auswahl2 = df_meta.index[df_meta['rock type']==i] # soll Zeilen aller ausgewählten Gesteine angeben
