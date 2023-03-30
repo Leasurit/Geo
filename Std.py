@@ -10,6 +10,7 @@ df_data = pd.read_csv('OxAndEl2.csv', sep=';')
 LookUp = pd.read_csv('LookUpTable.csv', sep=';')
 df_meta = pd.read_csv('Meta.csv', sep=';')
 df_abb = pd.read_csv('Abbreviations.csv', sep=';')
+df_ci = pd.read_csv('CI-MORB-OIB-PM.csv', sep=';')
 #error_bad_lines=False
 st.write(df_data) # zeigt alle Daten
 
@@ -197,7 +198,11 @@ with tab3:
 with tab4:
    st.header("CI, MORB, OIB, PM")
    st.write("Please select a standard to see the corresponding information.")
-   type = st.radio('Choose a standard', ("CI", "MORB", "OIB", "PM"))
+   st.write(df_ci)
+   type = st.radio('Choose a standard', ("CI-Chondrite", "E-MORB", "N-MORB", "OIB", "PM"))
+   df_ci.set_index("Rock", inplace = True)
+   df_meta.loc[type, :]
+   
       
 with tab5:
    st.header("Abbreviations")
