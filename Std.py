@@ -18,7 +18,7 @@ LookUp.set_index("Element", inplace=True)
 st.write(LookUp) # zeigt Zusatzinformationen
 #st.write(LookUp.loc[['Al'], ['Further information']])
 
-tab1, tab2, tab3 = st.tabs(["Standard", "Element", "Search"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Standard", "Element", "Search", "Rock type", "Abbreviations"])
 
 with tab1:
    standard = st.multiselect("Select one or more standards:", options = df_data["Standard"].unique()) #, default = df_data["Standard"].unique())
@@ -191,6 +191,12 @@ with tab3:
       #rocktypelist.append(i)
       #typestd = df_meta.loc[rocktypelist]
       #st.dataframe(typestd.T)
+      
+      
+with tab5:
+   st.header("Abbreviations")
+   st.write("List of Abbreviations for Entities and US States")
+   st.write(df_abb)
 
       
      
