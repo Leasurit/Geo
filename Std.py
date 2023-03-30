@@ -201,7 +201,7 @@ with tab4:
    type = st.radio('Choose a standard', ("CI Chondrite", "E-MORB", "N-MORB", "OIB", "PM"))
    df_ci.set_index("Rock", inplace = True)
    st.write(df_ci)
-   df_meta.loc[type, :]
+   df_ci.loc[type, :]
    
       
 with tab5:
