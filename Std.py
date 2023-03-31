@@ -122,7 +122,7 @@ with tab2:
         fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
         #st.plotly_chart(fig2)
 
-         # plots
+         # plots # zeigt zwei Mal Element nebeneinander
         col1, col2 = st.columns(2)
         with col1:
            st.plotly_chart(fig2)
