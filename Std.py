@@ -190,7 +190,7 @@ with tab3:
    producer = st.multiselect("Select one or more producers", options=list(producers)) 
    df_alplst.set_index("Producer", inplace = True)
    st.write(df_alplst)
-   df_alplst.loc['Producer']
+   df_alplst.loc[producer, :]
    
    #locations = df_alplst['Location']
    #producer = st.multiselect("Select one or more locations", options=list(locations)) 
