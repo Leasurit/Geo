@@ -11,6 +11,7 @@ LookUp = pd.read_csv('LookUpTable.csv', sep=';')
 df_meta = pd.read_csv('Meta.csv', sep=';')
 df_abb = pd.read_csv('Abbreviations.csv', sep=';')
 df_ci = pd.read_csv('CI-MORB-OIB-PM.csv', sep=';')
+df_alplst = pd.read_csv('AlphabeticListStd.csv', sep=';') 
 #error_bad_lines=False
 st.write(df_data) # zeigt alle Daten
 
@@ -185,10 +186,10 @@ with tab3:
    st.write('To get more information about the standard(s) please switch to the tab "Standards".')
    
    ###Vorbereitung neue Suchoptionen:
-   #producers = df_alplst['Producer']
-   #producer = st.multiselect("Select one or more producers", options=list(producers)) 
-   #df_alplst.set_index("Producer", inplace = True)
-   #df_alplst.loc[Producer, :]
+   producers = df_alplst['Producer']
+   producer = st.multiselect("Select one or more producers", options=list(producers)) 
+   df_alplst.set_index("Producer", inplace = True)
+   df_alplst.loc[Producer, :]
    
    #locations = df_alplst['Location']
    #producer = st.multiselect("Select one or more locations", options=list(locations)) 
