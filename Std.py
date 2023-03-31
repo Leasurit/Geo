@@ -42,16 +42,7 @@ with tab1:
 
       metadata = df_meta.loc[standardlist]
       st.dataframe(metadata.T)
-
-      ###TESTSTATION ###
-
-      ### Cosmetics
-
-      #df_meta
-      #st.write('meta normal')
       
-    
-
 # Define the CSS style
       def color_alternate_rows(x):
          if x[::2]:
@@ -64,31 +55,6 @@ with tab1:
          
 # Display the styled dataframe
       #styled_df_data
-
-      def dfdark(styler):
-       #styler.background_gradient(cmap='coolwarm')
-       #styler.color('white')
-       styler.set_table_styles([
-           {
-               "selector":"thead",
-               "props":[("background-color","grey")]
-           },
-           {
-               "selector":"tbody tr:nth-child(even)",
-               "props":[("background-color","lightgrey")]
-           },
-           {
-               "selector":"th.row_heading",
-               "props":[("background-color","grey")]
-           },
-           {
-               "selector":"td",
-               "props":[("border","white")]
-           },
-
-       ])
-       return styler
-       #styler.format(color='grey')
 
    #df=pd.DataFrame(index=np.arange(10),columns=[1,2],data=np.random.normal(size=[10,2]))
 
@@ -153,9 +119,15 @@ with tab2:
             fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
         else:
             fig2 = px.scatter(x=std_names, y=d, title = i)
-        #fig2 = px.scatter(x=std_names, y=d, log_y=True,  title = i)
         fig2.update_layout(xaxis_title="Standards", yaxis_title="Concentration in ppm")
-        st.plotly_chart(fig2)
+        #st.plotly_chart(fig2)
+
+         # plots
+         col1, col2 = st.columns(2)
+         with col1:
+            st.plotly_chart(fig2)
+         with col2:
+            st.plotly_chart(fig2)
 
       #zeilen = df_data[df_data['Constituent'] == 'Concentration'].index # Jede Zeile zeigen in der Concentration steht
       #for i in element:
