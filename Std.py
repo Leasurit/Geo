@@ -185,17 +185,18 @@ with tab3:
    df_meta.loc[rocktype, :]
    st.write('To get more information about the standard(s) please switch to the tab "Standards".')
    
-   ###Vorbereitung neue Suchoptionen:
+   # Search Producer
    producers = df_alplst['Producer'].drop_duplicates()
    producer = st.multiselect("Select one or more producers", options=list(producers)) 
    df_alplst.set_index("Producer", inplace = True)
-   st.write(df_alplst)
+   #st.write(df_alplst)
    df_alplst.loc[producer, :]
    
-   #locations = df_alplst['Location']
-   #producer = st.multiselect("Select one or more locations", options=list(locations)) 
-   #df_alplst.set_index("Location", inplace = True)
-   #df_alplst.loc[Location, :]
+   # Search Location
+   locations = df_alplst['Location'].drop_duplicates()
+   location = st.multiselect("Select one or more locations", options=list(locations)) 
+   df_alplst.set_index("Location", inplace = True)
+   df_alplst.loc[location, :]
    
    #rocktypelist = []
    #for i in rocktype:
