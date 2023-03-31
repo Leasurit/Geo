@@ -189,6 +189,7 @@ with tab3:
    producers = df_alplst['Producer']
    producer = st.multiselect("Select one or more producers", options=list(producers)) 
    df_alplst.set_index("Producer", inplace = True)
+   st.write(df_alplst)
    df_alplst.loc[:, Producer]
    
    #locations = df_alplst['Location']
