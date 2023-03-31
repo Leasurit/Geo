@@ -179,11 +179,19 @@ with tab2:
    
 with tab3:
    st.header("Search")
-   rocktypes = df_meta['rock type']
-   rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes)) # Ausgewählte Gesteine
-   df_meta.set_index("rock type", inplace = True)
-   df_meta.loc[rocktype, :]
    st.write('To get more information about the standard(s) please switch to the tab "Standards".')
+   #rocktypes = df_meta['rock type']
+   #rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes)) # Ausgewählte Gesteine
+   #df_meta.set_index("rock type", inplace = True)
+   #df_meta.loc[rocktype, :]
+   
+   
+   # Search Rock Type
+   rocktypes = df_alplst['Content'].drop_duplicates()
+   rocktype = st.multiselect("Select one or more rock types", options=list(rocktypes)) 
+   df_alplst.set_index("Content", inplace = True)
+   df_alplst.loc[rocktype, :]
+   
    
    # Search Producer
    producers = df_alplst['Producer'].drop_duplicates()
